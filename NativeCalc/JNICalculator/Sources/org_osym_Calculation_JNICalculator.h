@@ -4,6 +4,7 @@
 
 #ifndef _Included_org_osym_Calculation_JNICalculator
 #define _Included_org_osym_Calculation_JNICalculator
+
 #ifdef __cplusplus
 extern "C" {
 #endif

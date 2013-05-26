@@ -1,0 +1,268 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C20F7A31747D38500EEE58E /* org_osym_Calculation_JNICalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C20F7A11747D38500EEE58E /* org_osym_Calculation_JNICalculator.h */; };
+		1C20F7A41747D38500EEE58E /* org_osym_Calculation_JNICalculator_JNICalculatorListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C20F7A21747D38500EEE58E /* org_osym_Calculation_JNICalculator_JNICalculatorListener.h */; };
+		1CCF665F174D626A00486FF6 /* base_func.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF6659174D626A00486FF6 /* base_func.c */; };
+		1CCF6660174D626A00486FF6 /* base_func.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CCF665A174D626A00486FF6 /* base_func.h */; };
+		1CCF6661174D626A00486FF6 /* calculator.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF665B174D626A00486FF6 /* calculator.c */; };
+		1CCF6662174D626A00486FF6 /* calculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CCF665C174D626A00486FF6 /* calculator.h */; };
+		1CCF6663174D626A00486FF6 /* triplet_func.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF665D174D626A00486FF6 /* triplet_func.c */; };
+		1CCF6664174D626A00486FF6 /* triplet_func.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CCF665E174D626A00486FF6 /* triplet_func.h */; };
+		1CF3CE2D1748FBDF0032920C /* org_osym_Calculation_JNICalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1CF3CE2C1748FBDF0032920C /* org_osym_Calculation_JNICalculator.cpp */; };
+		1CF3CE2F1748FF370032920C /* JavaVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF3CE2E1748FF370032920C /* JavaVM.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1C20F7991747CE6A00EEE58E /* libJNICalculator.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libJNICalculator.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C20F7A11747D38500EEE58E /* org_osym_Calculation_JNICalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = org_osym_Calculation_JNICalculator.h; sourceTree = "<group>"; };
+		1C20F7A21747D38500EEE58E /* org_osym_Calculation_JNICalculator_JNICalculatorListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = org_osym_Calculation_JNICalculator_JNICalculatorListener.h; sourceTree = "<group>"; };
+		1CCF6659174D626A00486FF6 /* base_func.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_func.c; sourceTree = "<group>"; };
+		1CCF665A174D626A00486FF6 /* base_func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_func.h; sourceTree = "<group>"; };
+		1CCF665B174D626A00486FF6 /* calculator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = calculator.c; sourceTree = "<group>"; };
+		1CCF665C174D626A00486FF6 /* calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calculator.h; sourceTree = "<group>"; };
+		1CCF665D174D626A00486FF6 /* triplet_func.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = triplet_func.c; sourceTree = "<group>"; };
+		1CCF665E174D626A00486FF6 /* triplet_func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triplet_func.h; sourceTree = "<group>"; };
+		1CF3CE2C1748FBDF0032920C /* org_osym_Calculation_JNICalculator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = org_osym_Calculation_JNICalculator.cpp; sourceTree = "<group>"; };
+		1CF3CE2E1748FF370032920C /* JavaVM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaVM.framework; path = System/Library/Frameworks/JavaVM.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1C20F7961747CE6A00EEE58E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CF3CE2F1748FF370032920C /* JavaVM.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C20F7901747CE6A00EEE58E = {
+			isa = PBXGroup;
+			children = (
+				1CF3CE2E1748FF370032920C /* JavaVM.framework */,
+				1C20F7A01747D38500EEE58E /* Sources */,
+				1C20F79A1747CE6A00EEE58E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1C20F79A1747CE6A00EEE58E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C20F7991747CE6A00EEE58E /* libJNICalculator.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1C20F7A01747D38500EEE58E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1CCF6658174D626A00486FF6 /* Sources */,
+				1C20F7A11747D38500EEE58E /* org_osym_Calculation_JNICalculator.h */,
+				1C20F7A21747D38500EEE58E /* org_osym_Calculation_JNICalculator_JNICalculatorListener.h */,
+				1CF3CE2C1748FBDF0032920C /* org_osym_Calculation_JNICalculator.cpp */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		1CCF6658174D626A00486FF6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1CCF6659174D626A00486FF6 /* base_func.c */,
+				1CCF665A174D626A00486FF6 /* base_func.h */,
+				1CCF665B174D626A00486FF6 /* calculator.c */,
+				1CCF665C174D626A00486FF6 /* calculator.h */,
+				1CCF665D174D626A00486FF6 /* triplet_func.c */,
+				1CCF665E174D626A00486FF6 /* triplet_func.h */,
+			);
+			name = Sources;
+			path = ../../NativeCalculator/Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1C20F7971747CE6A00EEE58E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C20F7A31747D38500EEE58E /* org_osym_Calculation_JNICalculator.h in Headers */,
+				1C20F7A41747D38500EEE58E /* org_osym_Calculation_JNICalculator_JNICalculatorListener.h in Headers */,
+				1CCF6660174D626A00486FF6 /* base_func.h in Headers */,
+				1CCF6662174D626A00486FF6 /* calculator.h in Headers */,
+				1CCF6664174D626A00486FF6 /* triplet_func.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1C20F7981747CE6A00EEE58E /* JNICalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C20F79D1747CE6A00EEE58E /* Build configuration list for PBXNativeTarget "JNICalculator" */;
+			buildPhases = (
+				1C20F7951747CE6A00EEE58E /* Sources */,
+				1C20F7961747CE6A00EEE58E /* Frameworks */,
+				1C20F7971747CE6A00EEE58E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JNICalculator;
+			productName = JNICalculator;
+			productReference = 1C20F7991747CE6A00EEE58E /* libJNICalculator.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1C20F7911747CE6A00EEE58E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "World Evil Inc.";
+			};
+			buildConfigurationList = 1C20F7941747CE6A00EEE58E /* Build configuration list for PBXProject "JNICalculator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1C20F7901747CE6A00EEE58E;
+			productRefGroup = 1C20F79A1747CE6A00EEE58E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1C20F7981747CE6A00EEE58E /* JNICalculator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1C20F7951747CE6A00EEE58E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CF3CE2D1748FBDF0032920C /* org_osym_Calculation_JNICalculator.cpp in Sources */,
+				1CCF665F174D626A00486FF6 /* base_func.c in Sources */,
+				1CCF6661174D626A00486FF6 /* calculator.c in Sources */,
+				1CCF6663174D626A00486FF6 /* triplet_func.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1C20F79B1747CE6A00EEE58E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1C20F79C1747CE6A00EEE58E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1C20F79E1747CE6A00EEE58E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				LLVM_LTO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1C20F79F1747CE6A00EEE58E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				LLVM_LTO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1C20F7941747CE6A00EEE58E /* Build configuration list for PBXProject "JNICalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C20F79B1747CE6A00EEE58E /* Debug */,
+				1C20F79C1747CE6A00EEE58E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C20F79D1747CE6A00EEE58E /* Build configuration list for PBXNativeTarget "JNICalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C20F79E1747CE6A00EEE58E /* Debug */,
+				1C20F79F1747CE6A00EEE58E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1C20F7911747CE6A00EEE58E /* Project object */;
+}

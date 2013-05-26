@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: libs/bridj-0.6.2-c-only.jar libs/commons-io-2.4.jar libs/NativeCalculator.jar
+Main-Class: org.osym.Gui.MainWindow
+

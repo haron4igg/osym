@@ -1,0 +1,64 @@
+# depslib dependency file v1.0
+1368693867 source:/Users/ireshetnikov/Documents/University Projects/NativeCalc/NativeCalculator/Sources/base_func.c
+	<stdio.h>
+	<math.h>
+	"base_func.h"
+
+1368649011 /Users/ireshetnikov/Documents/University Projects/NativeCalc/NativeCalculator/Sources/base_func.h
+
+1368693904 source:/Users/ireshetnikov/Documents/University Projects/NativeCalc/NativeCalculator/Sources/calculator.c
+	<stdio.h>
+	<stdlib.h>
+	"calculator.h"
+	"triplet_func.h"
+	<unistd.h>
+
+1368692774 /Users/ireshetnikov/Documents/University Projects/NativeCalc/NativeCalculator/Sources/calculator.h
+
+1368650860 /Users/ireshetnikov/Documents/University Projects/NativeCalc/NativeCalculator/Sources/triplet_func.h
+
+1368693288 source:/Users/ireshetnikov/Documents/University Projects/NativeCalc/NativeCalculator/Sources/triplet_func.c
+	<stdio.h>
+	<stdlib.h>
+	"triplet_func.h"
+	"base_func.h"
+	<math.h>
+	<time.h>
+
+1368694114 source:/Users/ireshetnikov/Documents/University Projects/NativeCalc/NativeCalculator/osym_test/main.c
+	<stdio.h>
+	"../Sources/calculator.h"
+
+1369598976 source:c:\users\haron\desktop\nativecalc\nativecalculator\sources\triplet_func.c
+	<stdio.h>
+	<stdlib.h>
+	"triplet_func.h"
+	"base_func.h"
+	<math.h>
+	<time.h>
+
+1368650860 c:\users\haron\desktop\nativecalc\nativecalculator\sources\triplet_func.h
+
+1368649012 c:\users\haron\desktop\nativecalc\nativecalculator\sources\base_func.h
+
+1368693868 source:c:\users\haron\desktop\nativecalc\nativecalculator\sources\base_func.c
+	<stdio.h>
+	<math.h>
+	"base_func.h"
+
+1369599168 source:c:\users\haron\desktop\nativecalc\nativecalculator\sources\calculator.c
+	<stdio.h>
+	<stdlib.h>
+	"calculator.h"
+	"triplet_func.h"
+	<unistd.h>
+	<windows.h>
+
+1369327958 c:\users\haron\desktop\nativecalc\nativecalculator\sources\calculator.h
+
+1369599168 source:c:\users\haron\desktop\nativecalc\nativecalculator\osym_test\main.c
+	<stdio.h>
+	"../Sources/calculator.h"
+	<stdlib.h>
+	<sys/time.h>
+

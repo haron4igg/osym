@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Release-lib" />
+	<File name="Sources\base_func.c" open="1" top="0" tabpos="1">
+		<Cursor position="2172" topLine="14" />
+	</File>
+	<File name="Sources\calculator.c" open="1" top="0" tabpos="2">
+		<Cursor position="3370" topLine="123" />
+	</File>
+	<File name="Sources\triplet_func.c" open="1" top="0" tabpos="4">
+		<Cursor position="2930" topLine="72" />
+	</File>
+	<File name="osym_test\main.c" open="1" top="1" tabpos="3">
+		<Cursor position="3264" topLine="61" />
+	</File>
+</CodeBlocks_layout_file>

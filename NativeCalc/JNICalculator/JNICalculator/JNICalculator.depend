@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1369602257 source:c:\users\haron\documents\github\osym\nativecalc\jnicalculator\sources\org_osym_calculation_jnicalculator.cpp
+	<stdio.h>
+	"org_osym_Calculation_JNICalculator.h"
+	"calculator.h"
+
+1369601864 c:\users\haron\documents\github\osym\nativecalc\jnicalculator\sources\org_osym_calculation_jnicalculator.h
+	<jni.h>
+
+1369327958 c:\users\haron\documents\github\osym\nativecalc\nativecalculator\sources\calculator.h
+
+1368693868 source:c:\users\haron\documents\github\osym\nativecalc\nativecalculator\sources\base_func.c
+	<stdio.h>
+	<math.h>
+	"base_func.h"
+
+1368649012 c:\users\haron\documents\github\osym\nativecalc\nativecalculator\sources\base_func.h
+
+1369599168 source:c:\users\haron\documents\github\osym\nativecalc\nativecalculator\sources\calculator.c
+	<stdio.h>
+	<stdlib.h>
+	"calculator.h"
+	"triplet_func.h"
+	<unistd.h>
+	<windows.h>
+
+1368650860 c:\users\haron\documents\github\osym\nativecalc\nativecalculator\sources\triplet_func.h
+
+1369598976 source:c:\users\haron\documents\github\osym\nativecalc\nativecalculator\sources\triplet_func.c
+	<stdio.h>
+	<stdlib.h>
+	"triplet_func.h"
+	"base_func.h"
+	<math.h>
+	<time.h>
+
+1193994926 source:c:\users\haron\documents\github\osym\nativecalc\jnicalculator\jnicalculator\main.cpp
+	<iostream>
+

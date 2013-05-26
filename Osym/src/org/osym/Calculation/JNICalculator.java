@@ -1,6 +1,8 @@
 package org.osym.Calculation;
 
 
+import org.osym.tools.OSTools;
+
 import java.io.*;
 
 /**
@@ -24,24 +26,35 @@ public class JNICalculator extends CalculatorBase {
 
     private static final String LIB_BIN = "/lib/";
     private final static String LIB = "libJNICalculator.dylib";
+    private final static String LIB_WIN = "JNICalculator.dll";
 
+    private static String getLibPath() {
+        String libPath = null;
+        if (OSTools.isMac()) {
+            libPath = LIB_BIN + LIB;
+        } else {
+            libPath = LIB_BIN + LIB_WIN;
+        }
+        return libPath;
+    }
 
     static {
-
         System.out.println("Loading lib");
         try {
-            System.load("/Users/ireshetnikov/Documents/University Projects/Osym/lib/" + LIB);
+            if (OSTools.isMac()) {
+                System.load("/Users/ireshetnikov/Documents/University Projects/Osym/lib/" + LIB);
+            } else {
+                System.load("C:/Users/Haron/Documents/GitHub/Osym/Osym/lib/" + LIB_WIN);
+            }
+
             System.out.println("Lib is loaded from memory");
-        }   catch (Exception e) {
+        } catch (Exception e) {
             try {
-                loadLibraryFromJar(LIB_BIN + LIB);
+                loadLibraryFromJar(getLibPath());
             } catch (Exception se) {
                 throw new RuntimeException(se);
             }
         }
-
-
-
     }
 
     public static void loadLibraryFromJar(String path) throws IOException {
@@ -60,7 +73,7 @@ public class JNICalculator extends CalculatorBase {
         if (filename != null) {
             parts = filename.split("\\.", 2);
             prefix = parts[0];
-            suffix = (parts.length > 1) ? "."+parts[parts.length - 1] : null; // Thanks, davs! :-)
+            suffix = (parts.length > 1) ? "." + parts[parts.length - 1] : null; // Thanks, davs! :-)
         }
 
         // Check if the filename is okay
@@ -69,7 +82,7 @@ public class JNICalculator extends CalculatorBase {
         }
 
         // Prepare temporary file
-        File temp = File.createTempFile(prefix,"." + suffix);
+        File temp = File.createTempFile(prefix, "." + suffix);
         temp.deleteOnExit();
 
         if (!temp.exists()) {
@@ -174,38 +187,3 @@ public class JNICalculator extends CalculatorBase {
 }
 
 
-/*
-
-
-  System/Library/Frameworks/JavaVM.framework/Home/bin/java
-
-  -Didea.launcher.port=7532 "-Didea.launcher.bin.path=/Applications/IntelliJ IDEA 12.app/bin"
-
-  -Dfile.encoding=UTF-8
-
-  -classpath "/System/Library/Frameworks/JavaVM.framework/Home/lib/deploy.jar:
-  /System/Library/Frameworks/JavaVM.framework/Home/lib/dt.jar:
-  /System/Library/Frameworks/JavaVM.framework/Home/lib/javaws.jar:
-  /System/Library/Frameworks/JavaVM.framework/Home/lib/jce.jar:
-  /System/Library/Frameworks/JavaVM.framework/Home/lib/jconsole.jar:
-  /System/Library/Frameworks/JavaVM.framework/Home/lib/management-agent.jar:
-  /System/Library/Frameworks/JavaVM.framework/Home/lib/plugin.jar:
-  /System/Library/Frameworks/JavaVM.framework/Home/lib/sa-jdi.jar:
-  /System/Library/Frameworks/JavaVM.framework/Classes/charsets.jar:
-  /System/Library/Frameworks/JavaVM.framework/Classes/classes.jar:
-  /System/Library/Frameworks/JavaVM.framework/Classes/jsse.jar:
-  /System/Library/Frameworks/JavaVM.framework/Classes/ui.jar:
-  /System/Library/Frameworks/JavaVM.framework/Home/lib/ext/apple_provider.jar:
-  /System/Library/Frameworks/JavaVM.framework/Home/lib/ext/dnsns.jar:
-  /System/Library/Frameworks/JavaVM.framework/Home/lib/ext/localedata.jar:
-  /System/Library/Frameworks/JavaVM.framework/Home/lib/ext/sunjce_provider.jar:
-  /System/Library/Frameworks/JavaVM.framework/Home/lib/ext/sunpkcs11.jar:
-  /Users/ireshetnikov/Documents/University Projects/Osym/out/production/Osym:
-  /Users/ireshetnikov/Documents/University Projects/Osym/libs/commons-io-2.4.jar:
-  /Users/ireshetnikov/Documents/University Projects/Osym/libs/NativeCalculator.jar:
-  /Users/ireshetnikov/Documents/University Projects/Osym/libs/bridj-0.6.2-c-only.jar:
-  /Applications/IntelliJ IDEA 12.app/lib/idea_rt.jar"
-  com.intellij.rt.execution.application.AppMain
-
-  org.osym.Gui.MainWindow
-*/

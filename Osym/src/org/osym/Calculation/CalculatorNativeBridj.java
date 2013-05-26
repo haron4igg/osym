@@ -7,7 +7,7 @@ import java.nio.DoubleBuffer;
 import java.util.Arrays;
 
 
-public class CalculatorNative extends CalculatorBase {
+public class CalculatorNativeBridj extends CalculatorBase {
 
     protected Pointer<Integer> paused = Pointer.allocateInt();
     CalcListener listener = null;

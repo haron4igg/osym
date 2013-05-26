@@ -44,7 +44,7 @@ void JNICALL Java_org_osym_Calculation_JNICalculator_cancel(JNIEnv *env, jobject
 
 /*
  public void calculationReceivedPoints(double iteration, double[] input, double step);
- 
+
  public void calculationDone(double[] point, double iteration);
  */
 
@@ -67,13 +67,13 @@ void JNICALL Java_org_osym_Calculation_JNICalculator_run(
     delegate_method_done = env->GetMethodID(objclass, "calculationDone", "([DD)V");
     delegate = listener;
     delegate_env = env;
-   
-    
+
+
     double *cCoefs = env->GetDoubleArrayElements(coefs, NULL);
     double *cCoefs2 = env->GetDoubleArrayElements(coefs2, NULL);
     double *cInput = env->GetDoubleArrayElements(input, NULL);
-    
-    
+
+
     run(cCoefs, coefsLen, cCoefs2, cInput, inputLen, from, to, step, &paused, &canceled, didProduceVector, didDone);
 
 }

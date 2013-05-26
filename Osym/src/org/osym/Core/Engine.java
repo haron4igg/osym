@@ -183,7 +183,7 @@ public class Engine implements ImageManager.ImageManagerDelegate {
 
             switch (calculationMode) {
                 case CalculationModeTripletNative:  {
-                    calculator = new CalculatorNative();
+                    calculator = new CalculatorNativeBridj();
                     break;
                 }
                 case CalculationModeTripletNativeJNI: {

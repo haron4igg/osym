@@ -7,8 +7,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/NativeCalculator" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Debug/" />
+				<Option output="bin\Debug\NativeCalculator" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -16,8 +16,8 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/NativeCalculator" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Release/" />
+				<Option output="bin\Release\NativeCalculator" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -27,24 +27,41 @@
 					<Add option="-s" />
 				</Linker>
 			</Target>
+			<Target title="Release-lib">
+				<Option output="NativeCalculator" prefix_auto="1" extension_auto="1" />
+				<Option object_output="bin\Release" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-march=i386" />
+					<Add option="-O3" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Sources/base_func.c">
+		<Unit filename="Sources\base_func.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Sources/base_func.h" />
-		<Unit filename="Sources/calculator.c">
+		<Unit filename="Sources\base_func.h" />
+		<Unit filename="Sources\calculator.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Sources/calculator.h" />
-		<Unit filename="Sources/triplet_func.c">
+		<Unit filename="Sources\calculator.h" />
+		<Unit filename="Sources\triplet_func.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Sources/triplet_func.h" />
-		<Unit filename="osym_test/main.c">
+		<Unit filename="Sources\triplet_func.h" />
+		<Unit filename="osym_test\main.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Extensions>
 			<code_completion />

@@ -1,8 +1,3 @@
-import Calculation_Modules.Calculator;
-import Calculation_Modules.CalculatorNative;
-import Calculation_Modules.TripletFunctions;
-
-import javax.print.attribute.standard.RequestingUserName;
 import java.applet.*;
 import java.awt.*;
 import java.awt.List;
@@ -38,7 +33,7 @@ public class most_img extends Applet {
     double h = 1e-4;
     long Nh = 0, tstart, tend;
 
-    double av[] = new double[18];
+    double input[] = new double[18];
     double avstart[] = new double[18];
     double avlast[] = new double[18];
 
@@ -705,7 +700,7 @@ public class most_img extends Applet {
                 avstart[i] = Math.random() * 2.0 - 1;
 
             for (int i = 0; i < 18; i++)
-                av[i] = avstart[i];
+                input[i] = avstart[i];
 
             UKpot = K();
             betta = 1.0 / Math.pow(UKpot, 1.0 / 2);
@@ -720,7 +715,7 @@ public class most_img extends Applet {
                 avstart[i] = Math.random() * 2.0 - 1;
 
             for (int i = 0; i < 18; i++)
-                av[i] = avstart[i];
+                input[i] = avstart[i];
 
             UKpot = U();
             kappa = 1.0 / Math.pow(UKpot, 1.0 / 4);
@@ -754,7 +749,7 @@ public class most_img extends Applet {
             } while (myif != 1);
 
             for (int i = 0; i < 18; i++)
-                av[i] = avstart[i];
+                input[i] = avstart[i];
 
             UKpot = U() + K();
             kappa = 1.0 / Math.pow(UKpot, 1.0 / 4);
@@ -767,7 +762,7 @@ public class most_img extends Applet {
         }
 
         for (int i = 0; i < 18; i++)
-            av[i] = avstart[i];
+            input[i] = avstart[i];
 
         //для контроля
 
@@ -775,21 +770,21 @@ public class most_img extends Applet {
 
         System.out.println("начальные условия в для счета");
         for (int i = 0; i < 18; i++)
-            System.out.println(i + ": " + av[i]);
+            System.out.println(i + ": " + input[i]);
 
         System.out.println("энергия = " + UKpot);
     }
 
     public void negolonomnost(double t) {
-        double SymbN[][] = {{0.0, 0.0, 0.0, -av[6], -av[7], -av[8], av[3], av[4], av[5]},
-                {av[6], av[7], av[8], 0.0, 0.0, 0.0, -av[0], -av[1], -av[2]},
-                {-av[3], -av[4], -av[5], av[0], av[1], av[2], 0.0, 0.0, 0.0}};
+        double SymbN[][] = {{0.0, 0.0, 0.0, -input[6], -input[7], -input[8], input[3], input[4], input[5]},
+                {input[6], input[7], input[8], 0.0, 0.0, 0.0, -input[0], -input[1], -input[2]},
+                {-input[3], -input[4], -input[5], input[0], input[1], input[2], 0.0, 0.0, 0.0}};
 
         for (int i = 0; i < 3; i++)
             negol[i][gol] = 0.0;
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 9; j++)
-                negol[i][gol] += SymbN[i][j] * av[9 + j];
+                negol[i][gol] += SymbN[i][j] * input[9 + j];
 
         for (int i = 0; i < 3; i++)
             negol[i][gol] = Math.log10(Math.abs(negol[i][gol]));
@@ -1004,7 +999,7 @@ public class most_img extends Applet {
     public double svec(int v1, int v2) {
         int r1 = (v1 - 1) * 3;
         int r2 = (v2 - 1) * 3;
-        return (double) (av[r1] * av[r2] + av[r1 + 1] * av[r2 + 1] + av[r1 + 2] * av[r2 + 2]);
+        return (double) (input[r1] * input[r2] + input[r1 + 1] * input[r2 + 1] + input[r1 + 2] * input[r2 + 2]);
     }
 
     public double kvvvec(int v1, int v2) {
@@ -1012,25 +1007,25 @@ public class most_img extends Applet {
     }
 
     public double f1(int j, double[] mas) {
-        double v1[] = {av[0] + h * mas[0], av[1] + h * mas[1], av[2] + h * mas[2]};
-        double v2[] = {av[3] + h * mas[3], av[4] + h * mas[4], av[5] + h * mas[5]};
-        double v3[] = {av[6] + h * mas[6], av[7] + h * mas[7], av[8] + h * mas[8]};
+        double v1[] = {input[0] + h * mas[0], input[1] + h * mas[1], input[2] + h * mas[2]};
+        double v2[] = {input[3] + h * mas[3], input[4] + h * mas[4], input[5] + h * mas[5]};
+        double v3[] = {input[6] + h * mas[6], input[7] + h * mas[7], input[8] + h * mas[8]};
 
         return (double) (-v1[j % 3] * (Svec(v2, v2) + Svec(v3, v3)) + v2[j % 3] * Svec(v1, v2) + v3[j % 3] * Svec(v1, v3));
     }
 
     public double f2(int j, double[] mas) {
-        double v1[] = {av[0] + h * mas[0], av[1] + h * mas[1], av[2] + h * mas[2]};
-        double v2[] = {av[3] + h * mas[3], av[4] + h * mas[4], av[5] + h * mas[5]};
-        double v3[] = {av[6] + h * mas[6], av[7] + h * mas[7], av[8] + h * mas[8]};
+        double v1[] = {input[0] + h * mas[0], input[1] + h * mas[1], input[2] + h * mas[2]};
+        double v2[] = {input[3] + h * mas[3], input[4] + h * mas[4], input[5] + h * mas[5]};
+        double v3[] = {input[6] + h * mas[6], input[7] + h * mas[7], input[8] + h * mas[8]};
 
         return (double) (-v2[j % 3] * (Svec(v1, v1) + Svec(v3, v3)) + v1[j % 3] * Svec(v1, v2) + v3[j % 3] * Svec(v2, v3));
     }
 
     public double f3(int j, double[] mas) {
-        double v1[] = {av[0] + h * mas[0], av[1] + h * mas[1], av[2] + h * mas[2]};
-        double v2[] = {av[3] + h * mas[3], av[4] + h * mas[4], av[5] + h * mas[5]};
-        double v3[] = {av[6] + h * mas[6], av[7] + h * mas[7], av[8] + h * mas[8]};
+        double v1[] = {input[0] + h * mas[0], input[1] + h * mas[1], input[2] + h * mas[2]};
+        double v2[] = {input[3] + h * mas[3], input[4] + h * mas[4], input[5] + h * mas[5]};
+        double v3[] = {input[6] + h * mas[6], input[7] + h * mas[7], input[8] + h * mas[8]};
 
         return (double) (-v3[j % 3] * (Svec(v2, v2) + Svec(v1, v1)) + v2[j % 3] * Svec(v3, v2) + v1[j % 3] * Svec(v1, v3));
     }
@@ -1098,7 +1093,7 @@ public class most_img extends Applet {
             ss1[s] = 0;
 
         for (int j = 0; j < 9; j++)
-            k1[j][0] = fc(av[j + 9]);
+            k1[j][0] = fc(input[j + 9]);
         for (int j = 9; j < 12; j++)
             k1[j][0] = f1(j, ss1);
         for (int j = 12; j < 15; j++)
@@ -1116,7 +1111,7 @@ public class most_img extends Applet {
 
 
             for (int ss = 0; ss < 9; ss++)
-                k1[ss][j] = fc(av[ss + 9] + h * ss1[ss + 9]);
+                k1[ss][j] = fc(input[ss + 9] + h * ss1[ss + 9]);
             for (int ss = 9; ss < 12; ss++)
                 k1[ss][j] = f1(ss, ss1);
             for (int ss = 12; ss < 15; ss++)
@@ -1134,7 +1129,7 @@ public class most_img extends Applet {
 
 
         for (int s = 0; s < 18; s++)
-            av[s] = av[s] + h * ss1[s];
+            input[s] = input[s] + h * ss1[s];
     }
 
     public void myMaxMin() {
@@ -1177,9 +1172,9 @@ public class most_img extends Applet {
 
     public double myModav(int vec) {
         double max;
-        max = myMax3(av[vec], av[vec + 1], av[vec + 2]);
+        max = myMax3(input[vec], input[vec + 1], input[vec + 2]);
 
-        return (double) (Math.signum(max) * Math.sqrt(av[vec] * av[vec] + av[vec + 1] * av[vec + 1] + av[vec + 2] * av[vec + 2]));
+        return (double) (Math.signum(max) * Math.sqrt(input[vec] * input[vec] + input[vec + 1] * input[vec + 1] + input[vec + 2] * input[vec + 2]));
     }
 
     public void macshtab2(double[][] mas, int in, double[] kof, int dl) {
@@ -1651,10 +1646,10 @@ public class most_img extends Applet {
 
         if (tstart == 0) {
             for (int i = 0; i < 18; i++)
-                av[i] = avstart[i];
+                input[i] = avstart[i];
         } else {
             for (int i = 0; i < 18; i++)
-                av[i] = avlast[i];
+                input[i] = avlast[i];
         }
 
         double delta[] = new double[7];
@@ -1693,14 +1688,14 @@ public class most_img extends Applet {
                 }
 
                 for (int i1 = 0; i1 < 18; i1++)
-                    avlast[i1] = av[i1];
+                    avlast[i1] = input[i1];
 
                 for (int i1 = 0; i1 < 9; i1++) {
-                    if (av[i1] > 0) {
-                        MaxMin[i1 + 9][i1] = av[i1];
+                    if (input[i1] > 0) {
+                        MaxMin[i1 + 9][i1] = input[i1];
                         MaxMin[i1][i1] = 0.0;
                     } else {
-                        MaxMin[i1][i1] = av[i1];
+                        MaxMin[i1][i1] = input[i1];
                         MaxMin[i1 + 9][i1] = 0.0;
                     }
                 }
@@ -1713,6 +1708,31 @@ public class most_img extends Applet {
 
 
 
+                b = new double[][] {
+                        { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+                        {0.07407407407407407, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+                        {0.027777777777777776, 0.08333333333333333, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+                        {0.041666666666666664, 0.0, 0.125, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+                        {0.4166666666666667, 0.0, -1.5625, 1.5625, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+                        {0.05, 0.0, 0.0, 0.25, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+                        {-0.23148148148148148, 0.0, 0.0, 1.1574074074074074, -2.4074074074074074, 2.314814814814815, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+                        {0.10333333333333333, 0.0, 0.0, 0.0, 0.27111111111111114, -0.2222222222222222, 0.014444444444444444, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+                        {2.0, 0.0, 0.0, -8.833333333333334, 15.644444444444444, -11.88888888888889, 0.7444444444444445, 3.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+                        {-0.8425925925925926, 0.0, 0.0, 0.21296296296296297, -7.229629629629629, 5.7592592592592595, -0.31666666666666665, 2.8333333333333335, -0.08333333333333333, 0.0, 0.0, 0.0, 0.0},
+                        {0.5812195121951219, 0.0, 0.0, -2.0792682926829267, 4.3863414634146345, -3.6707317073170733, 0.5202439024390244, 0.5487804878048781, 0.27439024390243905, 0.43902439024390244, 0.0, 0.0, 0.0},
+                        {0.014634146341463415, 0.0, 0.0, 0.0, 0.0, -0.14634146341463414, -0.014634146341463415, -0.07317073170731707, 0.07317073170731707, 0.14634146341463414, 0.0, 0.0, 0.0},
+                        {-0.43341463414634146, 0.0, 0.0, -2.0792682926829267, 4.3863414634146345, -3.524390243902439, 0.5348780487804878, 0.6219512195121951, 0.20121951219512196, 0.2926829268292683, 0.0, 1.0, 0.0},
+                        {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+                        {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+                        {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+                        {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+                        {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0}
+                };
+
+                c = new double[] {0.04880952380952381, 0.0, 0.0, 0.0, 0.0, 0.3238095238095238, 0.2571428571428571, 0.2571428571428571, 0.03214285714285714, 0.03214285714285714, 0.0, 0.0, 0.04880952380952381, 0.0, 0.0, 0.0, 0.0, 0.0};
+                input = new double[]  {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.5446230076646713, 0.257800690054833, 0.25436137854197866, 0.2461605091991794, -0.3193534630602443, 0.628712774525114, 0.5874934622379206, -0.5699922058548407, 0.5867911096969345};
+
+
                 //long time = nativeCalc.run(b,c,MaxMin,input,tstart,tb,h);
 
                 //System.out.println("Execution time: " + time);
@@ -1720,19 +1740,21 @@ public class most_img extends Applet {
                 long startTime = System.currentTimeMillis();
                // Calculator calc = new Calculator(new TripletFunctions());
 
+
+
                 while (tlast < tb) {
 
                     //calc.solveByRK(input,b,c,h);
                     schetstep();
 
                     for (int s = 0; s < 9; s++) {
-                        if (av[s] > 0) {
-                            if (av[s] > MaxMin[s + 9][s])
+                        if (input[s] > 0) {
+                            if (input[s] > MaxMin[s + 9][s])
                                 for (int j = 0; j < 9; j++)
-                                    MaxMin[s + 9][j] = av[j];
-                        } else if (av[s] < MaxMin[s][s])
+                                    MaxMin[s + 9][j] = input[j];
+                        } else if (input[s] < MaxMin[s][s])
                             for (int j = 0; j < 9; j++)
-                                MaxMin[s][j] = av[j];
+                                MaxMin[s][j] = input[j];
                     }
 
                     myE = EUK();
@@ -1740,8 +1762,12 @@ public class most_img extends Applet {
                     px = wndX(tlast, 19);
                     py = wndY(myE, 18);
                     if (py - wndYMin < 400 && py - wndYMin > 50) {
-                        img_EUK[px - wndXMin + 1][py - wndYMin + 1] = 1;
-                        g.fillOval(px, py, 1, 1);
+                        //if (img_EUK[px - wndXMin + 1][py - wndYMin + 1] != 1) {
+                            img_EUK[px - wndXMin + 1][py - wndYMin + 1] = 1;
+                            g.fillRect(px, py, 1, 1);
+                            //g.fillOval(px, py, 1, 1);
+                        //}
+
                     }
 
                     tlast += h;
@@ -1934,7 +1960,7 @@ public class most_img extends Applet {
                     schetstep();
                     zapolnGrap(i, delta, delta100);
 
-                    g.fillOval(wndX(i * h, 19), wndY(av[index], index), 1, 1);
+                    g.fillOval(wndX(i * h, 19), wndY(input[index], index), 1, 1);
                     i++;
                 }
             } else if (myvision == 1)
@@ -1985,7 +2011,7 @@ public class most_img extends Applet {
                 while (i < tend) {
                     schetstep();
                     zapolnGrap(i, delta, delta100);
-                    g.fillOval(wndX(av[index1], index1), wndY(av[index2], index2), 1, 1);
+                    g.fillOval(wndX(input[index1], index1), wndY(input[index2], index2), 1, 1);
                     i++;
                 }
             } else if (myvision == 19)
@@ -2018,8 +2044,8 @@ public class most_img extends Applet {
                     schetstep();
                     zapolnGrap(i, delta, delta100);
 
-                    px = wndXYAll(av[index] + av[index + 2] * Math.cos(alpha), index / 3);
-                    py = wndYAll(av[index + 1] + av[index + 2] * Math.sin(alpha), index / 3);
+                    px = wndXYAll(input[index] + input[index + 2] * Math.cos(alpha), index / 3);
+                    py = wndYAll(input[index + 1] + input[index + 2] * Math.sin(alpha), index / 3);
 
                     x1 = px - wndXMin + 10;
                     y1 = py - wndYMin + 10;
@@ -2050,8 +2076,8 @@ public class most_img extends Applet {
             if (mykadr == 1) {
                 System.out.println("начальные условия в для счета last со времени " + tend);
                 for (int ii = 0; ii < 18; ii++) {
-                    avlast[ii] = av[ii];
-                    System.out.println(ii + ": " + av[ii]);
+                    avlast[ii] = input[ii];
+                    System.out.println(ii + ": " + input[ii]);
                 }
             }
 
@@ -2067,8 +2093,8 @@ public class most_img extends Applet {
                     schetstep();
                     zapolnGrap(i, delta, delta100);
 
-                    px = wndXYAll(av[index] + av[index + 6] * Math.cos(alpha), index + 3);
-                    py = wndYAll(av[index + 3] + av[index + 6] * Math.sin(alpha), index + 3);
+                    px = wndXYAll(input[index] + input[index + 6] * Math.cos(alpha), index + 3);
+                    py = wndYAll(input[index + 3] + input[index + 6] * Math.sin(alpha), index + 3);
 
                     x1 = px - wndXMin + 10;
                     y1 = py - wndYMin + 10;
@@ -2099,8 +2125,8 @@ public class most_img extends Applet {
             if (mykadr == 1) {
                 System.out.println("начальные условия в для счета last со времени " + tend);
                 for (int ii = 0; ii < 18; ii++) {
-                    avlast[ii] = av[ii];
-                    System.out.println(ii + ": " + av[ii]);
+                    avlast[ii] = input[ii];
+                    System.out.println(ii + ": " + input[ii]);
                 }
             }
         } else if (myvision == 34) {
@@ -2244,8 +2270,8 @@ public class most_img extends Applet {
                     schetstep();
                     zapolnGrap(i, delta, delta100);
 
-                    px = wndXYAll(av[index] - av[index + 2] * Math.cos(alpha), index / 3 + 7);
-                    py = wndYAll(av[index + 1] - av[index + 2] * Math.sin(alpha), index / 3 + 7);
+                    px = wndXYAll(input[index] - input[index + 2] * Math.cos(alpha), index / 3 + 7);
+                    py = wndYAll(input[index + 1] - input[index + 2] * Math.sin(alpha), index / 3 + 7);
 
                     x1 = px - wndXMin + 10;
                     y1 = py - wndYMin + 10;
@@ -2295,8 +2321,8 @@ public class most_img extends Applet {
                     schetstep();
                     zapolnGrap(i, delta, delta100);
 
-                    px = wndXYAll(av[index] - av[index + 6] * Math.cos(alpha), index + 10);
-                    py = wndYAll(av[index + 3] - av[index + 6] * Math.sin(alpha), index + 10);
+                    px = wndXYAll(input[index] - input[index + 6] * Math.cos(alpha), index + 10);
+                    py = wndYAll(input[index + 3] - input[index + 6] * Math.sin(alpha), index + 10);
 
                     x1 = px - wndXMin + 10;
                     y1 = py - wndYMin + 10;
@@ -2534,21 +2560,21 @@ public class most_img extends Applet {
                 avstart[17] = 0.020078625761224746;
 
                 for (int i1 = 0; i1 < 18; i1++)
-                    av[i1] = avstart[i1];
+                    input[i1] = avstart[i1];
 
                 for (int i1 = 0; i1 < 9; i1++) {
-                    if (av[i1] > 0) {
-                        MaxMin[i1 + 9][i1] = av[i1];
+                    if (input[i1] > 0) {
+                        MaxMin[i1 + 9][i1] = input[i1];
                         MaxMin[i1][i1] = 0.0;
                     } else {
-                        MaxMin[i1][i1] = av[i1];
+                        MaxMin[i1][i1] = input[i1];
                         MaxMin[i1 + 9][i1] = 0.0;
                     }
                 }
 
                 for (int j = 1; j < 3; j++) {
                     for (int i1 = 0; i1 < 18; i1++)
-                        av[i1] = avstart[i1];
+                        input[i1] = avstart[i1];
 
                     if (j == 0) {
                         //mp = 4;
@@ -2586,7 +2612,7 @@ public class most_img extends Applet {
                         }
 
                         for (int i1 = 0; i1 < 18; i1++)
-                            av[i1] = avlast[i1];
+                            input[i1] = avlast[i1];
                         //h = 0.00001;
                     }
 
@@ -2599,10 +2625,10 @@ public class most_img extends Applet {
                         //if(i >= 100.0/h)
                         //{
                         for (int s = 0; s < 9; s++) {
-                            if (av[s] > MaxMin[s + 9][s])
-                                MaxMin[s + 9][s] = av[s];
-                            else if (av[s] < MaxMin[s][s])
-                                MaxMin[s][s] = av[s];
+                            if (input[s] > MaxMin[s + 9][s])
+                                MaxMin[s + 9][s] = input[s];
+                            else if (input[s] < MaxMin[s][s])
+                                MaxMin[s][s] = input[s];
                         }
                         //}
 
@@ -2614,10 +2640,10 @@ public class most_img extends Applet {
                                 dosslow = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(myslow), 128));
 
                                 for (int j1 = 0; j1 < 18; j1++)
-                                    dosslow.writeDouble(av[j1]);
+                                    dosslow.writeDouble(input[j1]);
 
                                 for (int j1 = 0; j1 < 18; j1++)
-                                    System.out.println("запись " + av[j1]);
+                                    System.out.println("запись " + input[j1]);
 
                                 dosslow.flush();
                             } catch (SecurityException e) {
@@ -2656,7 +2682,7 @@ public class most_img extends Applet {
 
                 for (byte j = 2; j < 4; j++) {
                     for (int i1 = 0; i1 < 18; i1++)
-                        av[i1] = avstart[i1];
+                        input[i1] = avstart[i1];
 
                     if (j == 1) {
                         //mp = 4;
@@ -2683,7 +2709,7 @@ public class most_img extends Applet {
                         i = (long) (10.0 / h);
 
                         for (int i1 = 0; i1 < 18; i1++)
-                            av[i1] = avlast[i1];
+                            input[i1] = avlast[i1];
 
                         Color col = new Color(0, 0, 200);
                         g.setColor(col);
@@ -2699,26 +2725,26 @@ public class most_img extends Applet {
                         //{
                         px = wndX(i * h, 19);
 
-                        py = wndY(av[0], 0);
+                        py = wndY(input[0], 0);
                         img_u11[px - wndXMin + 1][py - wndYMin + 1] = j;
-                        py = wndY(av[1], 1);
+                        py = wndY(input[1], 1);
                         img_u12[px - wndXMin + 1][py - wndYMin + 1] = j;
-                        py = wndY(av[2], 2);
+                        py = wndY(input[2], 2);
                         img_u13[px - wndXMin + 1][py - wndYMin + 1] = j;
-                        py = wndY(av[3], 3);
+                        py = wndY(input[3], 3);
                         img_u21[px - wndXMin + 1][py - wndYMin + 1] = j;
-                        py = wndY(av[4], 4);
+                        py = wndY(input[4], 4);
                         img_u22[px - wndXMin + 1][py - wndYMin + 1] = j;
-                        py = wndY(av[5], 5);
+                        py = wndY(input[5], 5);
                         img_u23[px - wndXMin + 1][py - wndYMin + 1] = j;
-                        py = wndY(av[6], 6);
+                        py = wndY(input[6], 6);
                         img_u31[px - wndXMin + 1][py - wndYMin + 1] = j;
-                        py = wndY(av[7], 7);
+                        py = wndY(input[7], 7);
                         img_u32[px - wndXMin + 1][py - wndYMin + 1] = j;
-                        py = wndY(av[8], 8);
+                        py = wndY(input[8], 8);
                         img_u33[px - wndXMin + 1][py - wndYMin + 1] = j;
 
-                        py = wndY(av[index], index);
+                        py = wndY(input[index], index);
                         g.fillOval(px, py, 1, 1);
                         //}
                         i++;
@@ -2919,10 +2945,10 @@ public class most_img extends Applet {
         int px, py, num1, x1, y1;
 
         for (int i = 0; i < 3; i++) {
-            px = wndXYAll(av[i * 3] + av[i * 3 + 2] * Math.cos(alpha), i);
-            py = wndYAll(av[i * 3 + 1] + av[i * 3 + 2] * Math.sin(alpha), i);
+            px = wndXYAll(input[i * 3] + input[i * 3 + 2] * Math.cos(alpha), i);
+            py = wndYAll(input[i * 3 + 1] + input[i * 3 + 2] * Math.sin(alpha), i);
 
-            num1 = slow_ravnomer(25, av[i * 3], av[i * 3 + 1], av[i * 3 + 2], delta[i]);
+            num1 = slow_ravnomer(25, input[i * 3], input[i * 3 + 1], input[i * 3 + 2], delta[i]);
 
             x1 = px - wndXMin + 10;
             y1 = py - wndYMin + 10;
@@ -2931,47 +2957,47 @@ public class most_img extends Applet {
                 if (i == 0) {
                     if (img3D_u1All[x1][y1] == 102) {
                         if (420 - x1 == y1) {
-                            if (av[i * 3 + 1] > 0)
+                            if (input[i * 3 + 1] > 0)
                                 img3D_u1All[x1][y1] = num1;
-                        } else if (av[i * 3 + 2] < 0)
+                        } else if (input[i * 3 + 2] < 0)
                             img3D_u1All[x1][y1] = num1;
                     } else {
-                        if (num1 < img3D_u1All[x1][y1] && av[i * 3 + 2] < 0)
+                        if (num1 < img3D_u1All[x1][y1] && input[i * 3 + 2] < 0)
                             img3D_u1All[x1][y1] = num1;
-                        else if ((num1 > img3D_u1All[x1][y1] || img3D_u1All[x1][y1] == 100) && av[i * 3 + 2] > 0)
+                        else if ((num1 > img3D_u1All[x1][y1] || img3D_u1All[x1][y1] == 100) && input[i * 3 + 2] > 0)
                             img3D_u1All[x1][y1] = num1;
                     }
                 } else if (i == 1) {
                     if (img3D_u2All[x1][y1] == 102) {
                         if (420 - x1 == y1) {
-                            if (av[i * 3 + 1] > 0)
+                            if (input[i * 3 + 1] > 0)
                                 img3D_u2All[x1][y1] = num1;
-                        } else if (av[i * 3 + 2] < 0)
+                        } else if (input[i * 3 + 2] < 0)
                             img3D_u2All[x1][y1] = num1;
                     } else {
-                        if (num1 < img3D_u2All[x1][y1] && av[i * 3 + 2] < 0)
+                        if (num1 < img3D_u2All[x1][y1] && input[i * 3 + 2] < 0)
                             img3D_u2All[x1][y1] = num1;
-                        else if ((num1 > img3D_u2All[x1][y1] || img3D_u2All[x1][y1] == 100) && av[i * 3 + 2] > 0)
+                        else if ((num1 > img3D_u2All[x1][y1] || img3D_u2All[x1][y1] == 100) && input[i * 3 + 2] > 0)
                             img3D_u2All[x1][y1] = num1;
                     }
                 } else {
                     if (img3D_u3All[x1][y1] == 102) {
                         if (420 - x1 == y1) {
-                            if (av[i * 3 + 1] > 0)
+                            if (input[i * 3 + 1] > 0)
                                 img3D_u3All[x1][y1] = num1;
-                        } else if (av[i * 3 + 2] < 0)
+                        } else if (input[i * 3 + 2] < 0)
                             img3D_u3All[x1][y1] = num1;
                     } else {
-                        if (num1 < img3D_u3All[x1][y1] && av[i * 3 + 2] < 0)
+                        if (num1 < img3D_u3All[x1][y1] && input[i * 3 + 2] < 0)
                             img3D_u3All[x1][y1] = num1;
-                        else if ((num1 > img3D_u3All[x1][y1] || img3D_u3All[x1][y1] == 100) && av[i * 3 + 2] > 0)
+                        else if ((num1 > img3D_u3All[x1][y1] || img3D_u3All[x1][y1] == 100) && input[i * 3 + 2] > 0)
                             img3D_u3All[x1][y1] = num1;
                     }
                 }
             }
 
-            px = wndXYAll(av[i * 3] - av[i * 3 + 2] * Math.cos(alpha), i + 7);
-            py = wndYAll(av[i * 3 + 1] - av[i * 3 + 2] * Math.sin(alpha), i + 7);
+            px = wndXYAll(input[i * 3] - input[i * 3 + 2] * Math.cos(alpha), i + 7);
+            py = wndYAll(input[i * 3 + 1] - input[i * 3 + 2] * Math.sin(alpha), i + 7);
 
             x1 = px - wndXMin + 10;
             y1 = py - wndYMin + 10;
@@ -2980,40 +3006,40 @@ public class most_img extends Applet {
                 if (i == 0) {
                     if (imgD3_u1All[x1][y1] == 102) {
                         if (420 - x1 == y1) {
-                            if (av[i * 3 + 1] > 0)
+                            if (input[i * 3 + 1] > 0)
                                 imgD3_u1All[x1][y1] = num1;
-                        } else if (av[i * 3 + 2] > 0)
+                        } else if (input[i * 3 + 2] > 0)
                             imgD3_u1All[x1][y1] = num1;
                     } else {
-                        if (num1 < imgD3_u1All[x1][y1] && av[i * 3 + 2] > 0)
+                        if (num1 < imgD3_u1All[x1][y1] && input[i * 3 + 2] > 0)
                             imgD3_u1All[x1][y1] = num1;
-                        else if ((num1 > imgD3_u1All[x1][y1] || imgD3_u1All[x1][y1] == 100) && av[i * 3 + 2] < 0)
+                        else if ((num1 > imgD3_u1All[x1][y1] || imgD3_u1All[x1][y1] == 100) && input[i * 3 + 2] < 0)
                             imgD3_u1All[x1][y1] = num1;
                     }
                 } else if (i == 1) {
                     if (imgD3_u2All[x1][y1] == 102) {
                         if (420 - x1 == y1) {
-                            if (av[i * 3 + 1] > 0)
+                            if (input[i * 3 + 1] > 0)
                                 imgD3_u2All[x1][y1] = num1;
-                        } else if (av[i * 3 + 2] > 0)
+                        } else if (input[i * 3 + 2] > 0)
                             imgD3_u2All[x1][y1] = num1;
                     } else {
-                        if (num1 < imgD3_u2All[x1][y1] && av[i * 3 + 2] > 0)
+                        if (num1 < imgD3_u2All[x1][y1] && input[i * 3 + 2] > 0)
                             imgD3_u2All[x1][y1] = num1;
-                        else if ((num1 > imgD3_u2All[x1][y1] || imgD3_u2All[x1][y1] == 100) && av[i * 3 + 2] < 0)
+                        else if ((num1 > imgD3_u2All[x1][y1] || imgD3_u2All[x1][y1] == 100) && input[i * 3 + 2] < 0)
                             imgD3_u2All[x1][y1] = num1;
                     }
                 } else {
                     if (imgD3_u3All[x1][y1] == 102) {
                         if (420 - x1 == y1) {
-                            if (av[i * 3 + 1] > 0)
+                            if (input[i * 3 + 1] > 0)
                                 imgD3_u3All[x1][y1] = num1;
-                        } else if (av[i * 3 + 2] > 0)
+                        } else if (input[i * 3 + 2] > 0)
                             imgD3_u3All[x1][y1] = num1;
                     } else {
-                        if (num1 < imgD3_u3All[x1][y1] && av[i * 3 + 2] > 0)
+                        if (num1 < imgD3_u3All[x1][y1] && input[i * 3 + 2] > 0)
                             imgD3_u3All[x1][y1] = num1;
-                        else if ((num1 > imgD3_u3All[x1][y1] || imgD3_u3All[x1][y1] == 100) && av[i * 3 + 2] < 0)
+                        else if ((num1 > imgD3_u3All[x1][y1] || imgD3_u3All[x1][y1] == 100) && input[i * 3 + 2] < 0)
                             imgD3_u3All[x1][y1] = num1;
                     }
                 }
@@ -3022,10 +3048,10 @@ public class most_img extends Applet {
         }
 
         for (int i = 0; i < 3; i++) {
-            px = wndXYAll(av[i] + av[i + 6] * Math.cos(alpha), i + 3);
-            py = wndYAll(av[i + 3] + av[i + 6] * Math.sin(alpha), i + 3);
+            px = wndXYAll(input[i] + input[i + 6] * Math.cos(alpha), i + 3);
+            py = wndYAll(input[i + 3] + input[i + 6] * Math.sin(alpha), i + 3);
 
-            num1 = slow_ravnomer(25, av[i], av[i + 3], av[i + 6], delta[i + 3]);
+            num1 = slow_ravnomer(25, input[i], input[i + 3], input[i + 6], delta[i + 3]);
 
             x1 = px - wndXMin + 10;
             y1 = py - wndYMin + 10;
@@ -3034,47 +3060,47 @@ public class most_img extends Applet {
                 if (i == 0) {
                     if (img3D_uAll1[x1][y1] == 102) {
                         if (420 - x1 == y1) {
-                            if (av[i + 3] > 0)
+                            if (input[i + 3] > 0)
                                 img3D_uAll1[x1][y1] = num1;
-                        } else if (av[i + 6] < 0)
+                        } else if (input[i + 6] < 0)
                             img3D_uAll1[x1][y1] = num1;
                     } else {
-                        if (num1 < img3D_uAll1[x1][y1] && av[i + 6] < 0)
+                        if (num1 < img3D_uAll1[x1][y1] && input[i + 6] < 0)
                             img3D_uAll1[x1][y1] = num1;
-                        else if ((num1 > img3D_uAll1[x1][y1] || img3D_uAll1[x1][y1] == 100) && av[i + 6] > 0)
+                        else if ((num1 > img3D_uAll1[x1][y1] || img3D_uAll1[x1][y1] == 100) && input[i + 6] > 0)
                             img3D_uAll1[x1][y1] = num1;
                     }
                 } else if (i == 1) {
                     if (img3D_uAll2[x1][y1] == 102) {
                         if (420 - x1 == y1) {
-                            if (av[i + 3] > 0)
+                            if (input[i + 3] > 0)
                                 img3D_uAll2[x1][y1] = num1;
-                        } else if (av[i + 6] < 0)
+                        } else if (input[i + 6] < 0)
                             img3D_uAll2[x1][y1] = num1;
                     } else {
-                        if (num1 < img3D_uAll2[x1][y1] && av[i + 6] < 0)
+                        if (num1 < img3D_uAll2[x1][y1] && input[i + 6] < 0)
                             img3D_uAll2[x1][y1] = num1;
-                        else if ((num1 > img3D_u2All[x1][y1] || img3D_uAll2[x1][y1] == 100) && av[i + 6] > 0)
+                        else if ((num1 > img3D_u2All[x1][y1] || img3D_uAll2[x1][y1] == 100) && input[i + 6] > 0)
                             img3D_uAll2[x1][y1] = num1;
                     }
                 } else {
                     if (img3D_uAll3[x1][y1] == 102) {
                         if (420 - x1 == y1) {
-                            if (av[i + 3] > 0)
+                            if (input[i + 3] > 0)
                                 img3D_uAll3[x1][y1] = num1;
-                        } else if (av[i + 6] < 0)
+                        } else if (input[i + 6] < 0)
                             img3D_uAll3[x1][y1] = num1;
                     } else {
-                        if (num1 < img3D_uAll3[x1][y1] && av[i + 6] < 0)
+                        if (num1 < img3D_uAll3[x1][y1] && input[i + 6] < 0)
                             img3D_uAll3[x1][y1] = num1;
-                        else if ((num1 > img3D_u3All[x1][y1] || img3D_uAll3[x1][y1] == 100) && av[i + 6] > 0)
+                        else if ((num1 > img3D_u3All[x1][y1] || img3D_uAll3[x1][y1] == 100) && input[i + 6] > 0)
                             img3D_uAll3[x1][y1] = num1;
                     }
                 }
             }
 
-            px = wndXYAll(av[i] - av[i + 6] * Math.cos(alpha), i + 10);
-            py = wndYAll(av[i + 3] - av[i + 6] * Math.sin(alpha), i + 10);
+            px = wndXYAll(input[i] - input[i + 6] * Math.cos(alpha), i + 10);
+            py = wndYAll(input[i + 3] - input[i + 6] * Math.sin(alpha), i + 10);
 
             x1 = px - wndXMin + 10;
             y1 = py - wndYMin + 10;
@@ -3083,40 +3109,40 @@ public class most_img extends Applet {
                 if (i == 0) {
                     if (imgD3_uAll1[x1][y1] == 102) {
                         if (420 - x1 == y1) {
-                            if (av[i + 3] > 0)
+                            if (input[i + 3] > 0)
                                 imgD3_uAll1[x1][y1] = num1;
-                        } else if (av[i + 6] > 0)
+                        } else if (input[i + 6] > 0)
                             imgD3_uAll1[x1][y1] = num1;
                     } else {
-                        if (num1 < imgD3_uAll1[x1][y1] && av[i + 6] > 0)
+                        if (num1 < imgD3_uAll1[x1][y1] && input[i + 6] > 0)
                             imgD3_uAll1[x1][y1] = num1;
-                        else if ((num1 > imgD3_uAll1[x1][y1] || imgD3_uAll1[x1][y1] == 100) && av[i + 6] < 0)
+                        else if ((num1 > imgD3_uAll1[x1][y1] || imgD3_uAll1[x1][y1] == 100) && input[i + 6] < 0)
                             imgD3_uAll1[x1][y1] = num1;
                     }
                 } else if (i == 1) {
                     if (imgD3_uAll2[x1][y1] == 102) {
                         if (420 - x1 == y1) {
-                            if (av[i + 3] > 0)
+                            if (input[i + 3] > 0)
                                 imgD3_uAll2[x1][y1] = num1;
-                        } else if (av[i + 6] > 0)
+                        } else if (input[i + 6] > 0)
                             imgD3_uAll2[x1][y1] = num1;
                     } else {
-                        if (num1 < imgD3_uAll2[x1][y1] && av[i + 6] > 0)
+                        if (num1 < imgD3_uAll2[x1][y1] && input[i + 6] > 0)
                             imgD3_uAll2[x1][y1] = num1;
-                        else if ((num1 > imgD3_u2All[x1][y1] || imgD3_uAll2[x1][y1] == 100) && av[i + 6] < 0)
+                        else if ((num1 > imgD3_u2All[x1][y1] || imgD3_uAll2[x1][y1] == 100) && input[i + 6] < 0)
                             imgD3_uAll2[x1][y1] = num1;
                     }
                 } else {
                     if (imgD3_uAll3[x1][y1] == 102) {
                         if (420 - x1 == y1) {
-                            if (av[i + 3] > 0)
+                            if (input[i + 3] > 0)
                                 imgD3_uAll3[x1][y1] = num1;
-                        } else if (av[i + 6] > 0)
+                        } else if (input[i + 6] > 0)
                             imgD3_uAll3[x1][y1] = num1;
                     } else {
-                        if (num1 < imgD3_uAll3[x1][y1] && av[i + 6] > 0)
+                        if (num1 < imgD3_uAll3[x1][y1] && input[i + 6] > 0)
                             imgD3_uAll3[x1][y1] = num1;
-                        else if ((num1 > imgD3_u3All[x1][y1] || imgD3_uAll3[x1][y1] == 100) && av[i + 6] < 0)
+                        else if ((num1 > imgD3_u3All[x1][y1] || imgD3_uAll3[x1][y1] == 100) && input[i + 6] < 0)
                             imgD3_uAll3[x1][y1] = num1;
                     }
                 }
@@ -3174,9 +3200,9 @@ public class most_img extends Applet {
         }
 
         for (int i = 0; i < 3; i++) {
-            num1 = slow_ravnomer(SLOW_CONST, av[i * 3], av[i * 3 + 1], av[i * 3 + 2], i);
+            num1 = slow_ravnomer(SLOW_CONST, input[i * 3], input[i * 3 + 1], input[i * 3 + 2], i);
             Nkslow[i][num1 - 1]++;
-            num1 = slow_ravnomer(SLOW_CONST, av[i], av[i + 3], av[i + 6], i + 3);
+            num1 = slow_ravnomer(SLOW_CONST, input[i], input[i + 3], input[i + 6], i + 3);
             Nkslow[i + 3][num1 - 1]++;
         }
         num1 = slow_ravnomer(SLOW_CONST, mod1, mod2, mod3, 6);
@@ -3187,7 +3213,7 @@ public class most_img extends Applet {
 
         if (utime[18][px - wndXMin + 1] == -1) {
             for (int j = 0; j < 18; j++)
-                utime[j][px - wndXMin + 1] = av[j];
+                utime[j][px - wndXMin + 1] = input[j];
             utime[18][px - wndXMin + 1] = st * h;
         }
 
@@ -3195,62 +3221,62 @@ public class most_img extends Applet {
         if (py - wndYMin < 400)
             img_EUK[px - wndXMin + 1][py - wndYMin + 1] = 1;
 
-        py = wndY(av[0], 0);
+        py = wndY(input[0], 0);
         img_u11[px - wndXMin + 1][py - wndYMin + 1] = 1;
 
-        py = wndY(av[1], 1);
+        py = wndY(input[1], 1);
         img_u12[px - wndXMin + 1][py - wndYMin + 1] = 1;
-        py = wndY(av[2], 2);
+        py = wndY(input[2], 2);
         img_u13[px - wndXMin + 1][py - wndYMin + 1] = 1;
-        py = wndY(av[3], 3);
+        py = wndY(input[3], 3);
         img_u21[px - wndXMin + 1][py - wndYMin + 1] = 1;
-        py = wndY(av[4], 4);
+        py = wndY(input[4], 4);
         img_u22[px - wndXMin + 1][py - wndYMin + 1] = 1;
-        py = wndY(av[5], 5);
+        py = wndY(input[5], 5);
         img_u23[px - wndXMin + 1][py - wndYMin + 1] = 1;
-        py = wndY(av[6], 6);
+        py = wndY(input[6], 6);
         img_u31[px - wndXMin + 1][py - wndYMin + 1] = 1;
-        py = wndY(av[7], 7);
+        py = wndY(input[7], 7);
         img_u32[px - wndXMin + 1][py - wndYMin + 1] = 1;
-        py = wndY(av[8], 8);
+        py = wndY(input[8], 8);
         img_u33[px - wndXMin + 1][py - wndYMin + 1] = 1;
 
         int pz;
 
-        py = wndY(av[9], 9);
-        pz = wndX(av[0], 0);
+        py = wndY(input[9], 9);
+        pz = wndX(input[0], 0);
         img_uc11[px - wndXMin + 1][py - wndYMin + 1] = 1;
         img_uf11[pz - wndXMin + 1][py - wndYMin + 1] = 1;
-        py = wndY(av[10], 10);
-        pz = wndX(av[1], 1);
+        py = wndY(input[10], 10);
+        pz = wndX(input[1], 1);
         img_uc12[px - wndXMin + 1][py - wndYMin + 1] = 1;
         img_uf12[pz - wndXMin + 1][py - wndYMin + 1] = 1;
-        py = wndY(av[11], 11);
-        pz = wndX(av[2], 2);
+        py = wndY(input[11], 11);
+        pz = wndX(input[2], 2);
         img_uc13[px - wndXMin + 1][py - wndYMin + 1] = 1;
         img_uf13[pz - wndXMin + 1][py - wndYMin + 1] = 1;
-        py = wndY(av[12], 12);
-        pz = wndX(av[3], 3);
+        py = wndY(input[12], 12);
+        pz = wndX(input[3], 3);
         img_uc21[px - wndXMin + 1][py - wndYMin + 1] = 1;
         img_uf21[pz - wndXMin + 1][py - wndYMin + 1] = 1;
-        py = wndY(av[13], 13);
-        pz = wndX(av[4], 4);
+        py = wndY(input[13], 13);
+        pz = wndX(input[4], 4);
         img_uc22[px - wndXMin + 1][py - wndYMin + 1] = 1;
         img_uf22[pz - wndXMin + 1][py - wndYMin + 1] = 1;
-        py = wndY(av[14], 14);
-        pz = wndX(av[5], 5);
+        py = wndY(input[14], 14);
+        pz = wndX(input[5], 5);
         img_uc23[px - wndXMin + 1][py - wndYMin + 1] = 1;
         img_uf23[pz - wndXMin + 1][py - wndYMin + 1] = 1;
-        py = wndY(av[15], 15);
-        pz = wndX(av[6], 6);
+        py = wndY(input[15], 15);
+        pz = wndX(input[6], 6);
         img_uc31[px - wndXMin + 1][py - wndYMin + 1] = 1;
         img_uf31[pz - wndXMin + 1][py - wndYMin + 1] = 1;
-        py = wndY(av[16], 16);
-        pz = wndX(av[7], 7);
+        py = wndY(input[16], 16);
+        pz = wndX(input[7], 7);
         img_uc32[px - wndXMin + 1][py - wndYMin + 1] = 1;
         img_uf32[pz - wndXMin + 1][py - wndYMin + 1] = 1;
-        py = wndY(av[17], 17);
-        pz = wndX(av[8], 8);
+        py = wndY(input[17], 17);
+        pz = wndX(input[8], 8);
         img_uc33[px - wndXMin + 1][py - wndYMin + 1] = 1;
         img_uf33[pz - wndXMin + 1][py - wndYMin + 1] = 1;
 
@@ -3399,13 +3425,13 @@ public class most_img extends Applet {
                 iend = (long) (utime[18][XUp - wndXMin + 1] / h);
 
                 for (int i = 0; i < 18; i++)
-                    av[i] = utime[i][XDown - wndXMin + 1];
+                    input[i] = utime[i][XDown - wndXMin + 1];
             } else {
                 iend = (long) (utime[18][XDown - wndXMin + 1] / h);
                 istart = (long) (utime[18][XUp - wndXMin + 1] / h);
 
                 for (int i = 0; i < 18; i++)
-                    av[i] = utime[i][XUp - wndXMin + 1];
+                    input[i] = utime[i][XUp - wndXMin + 1];
             }
         } else {
             if (XDown < XUp) {
@@ -3413,13 +3439,13 @@ public class most_img extends Applet {
                 iend = (long) (utimezym[18][XUp - wndXMin + 1] / h);
 
                 for (int i = 0; i < 18; i++)
-                    av[i] = utimezym[i][XDown - wndXMin + 1];
+                    input[i] = utimezym[i][XDown - wndXMin + 1];
             } else {
                 iend = (long) (utimezym[18][XDown - wndXMin + 1] / h);
                 istart = (long) (utimezym[18][XUp - wndXMin + 1] / h);
 
                 for (int i = 0; i < 18; i++)
-                    av[i] = utimezym[i][XUp - wndXMin + 1];
+                    input[i] = utimezym[i][XUp - wndXMin + 1];
             }
         }
 
@@ -3458,13 +3484,13 @@ public class most_img extends Applet {
             while (istart < iend) {
                 schetstep();
 
-                if (av[index] >= maxMin[21][0] && av[index] <= maxMin[21][1])
-                    g.fillOval(wndX(istart * h, 20), wndY(av[index], 21), 1, 1);
+                if (input[index] >= maxMin[21][0] && input[index] <= maxMin[21][1])
+                    g.fillOval(wndX(istart * h, 20), wndY(input[index], 21), 1, 1);
 
                 px = wndX(istart * h, 20);
                 if (utimezym[18][px - wndXMin + 1] == -1) {
                     for (int j = 0; j < 18; j++)
-                        utimezym[j][px - wndXMin + 1] = av[j];
+                        utimezym[j][px - wndXMin + 1] = input[j];
                     utimezym[18][px - wndXMin + 1] = istart * h;
                 }
                 istart++;
@@ -3543,7 +3569,7 @@ public class most_img extends Applet {
                 px = wndX(istart * h, 20);
                 if (utimezym[18][px - wndXMin + 1] == -1) {
                     for (int j = 0; j < 18; j++)
-                        utimezym[j][px - wndXMin + 1] = av[j];
+                        utimezym[j][px - wndXMin + 1] = input[j];
                     utimezym[18][px - wndXMin + 1] = i * h;
                 }
 
@@ -4214,16 +4240,16 @@ public class most_img extends Applet {
         byte myokt;
 
         for (byte i = 0; i < 3; i++) {
-            mod = Math.sqrt(av[i * 3] * av[i * 3] + av[i * 3 + 1] * av[i * 3 + 1] + av[i * 3 + 2] * av[i * 3 + 2]);
+            mod = Math.sqrt(input[i * 3] * input[i * 3] + input[i * 3 + 1] * input[i * 3 + 1] + input[i * 3 + 2] * input[i * 3 + 2]);
 
             if (mod > radius[i]) {
-                num1 = slow_ravnomer(25, av[i * 3], av[i * 3 + 1], av[i * 3 + 2], delta[i]);
+                num1 = slow_ravnomer(25, input[i * 3], input[i * 3 + 1], input[i * 3 + 2], delta[i]);
 
-                if (av[i * 3] > 0) {
-                    if (av[i * 3 + 1] > 0) {
-                        if (av[i * 3 + 2] > 0) {
-                            px = wndXYAll(av[i * 3] - av[i * 3 + 2] * Math.cos(alpha), i * 8 + 14);
-                            py = wndYAll(av[i * 3 + 1] - av[i * 3 + 2] * Math.sin(alpha), i * 8 + 14);
+                if (input[i * 3] > 0) {
+                    if (input[i * 3 + 1] > 0) {
+                        if (input[i * 3 + 2] > 0) {
+                            px = wndXYAll(input[i * 3] - input[i * 3 + 2] * Math.cos(alpha), i * 8 + 14);
+                            py = wndYAll(input[i * 3 + 1] - input[i * 3 + 2] * Math.sin(alpha), i * 8 + 14);
 
                             if (i == 0)
                                 okt(num1, px, py, D8_u1All_1);
@@ -4234,8 +4260,8 @@ public class most_img extends Applet {
 
                             myokt = 1;
                         } else {
-                            px = wndXYAll(av[i * 3] + av[i * 3 + 2] * Math.cos(alpha), i * 8 + 15);
-                            py = wndYAll(av[i * 3 + 1] + av[i * 3 + 2] * Math.sin(alpha), i * 8 + 15);
+                            px = wndXYAll(input[i * 3] + input[i * 3 + 2] * Math.cos(alpha), i * 8 + 15);
+                            py = wndYAll(input[i * 3 + 1] + input[i * 3 + 2] * Math.sin(alpha), i * 8 + 15);
 
                             if (i == 0)
                                 okt(num1, px, py, D8_u1All_2);
@@ -4247,9 +4273,9 @@ public class most_img extends Applet {
                             myokt = 2;
                         }
                     } else {
-                        if (av[i * 3 + 2] > 0) {
-                            px = wndXYAll(av[i * 3] - av[i * 3 + 2] * Math.cos(alpha), i * 8 + 16);
-                            py = wndYAll(-av[i * 3 + 1] - av[i * 3 + 2] * Math.sin(alpha), i * 8 + 16);
+                        if (input[i * 3 + 2] > 0) {
+                            px = wndXYAll(input[i * 3] - input[i * 3 + 2] * Math.cos(alpha), i * 8 + 16);
+                            py = wndYAll(-input[i * 3 + 1] - input[i * 3 + 2] * Math.sin(alpha), i * 8 + 16);
 
                             if (i == 0)
                                 okt(num1, px, py, D8_u1All_3);
@@ -4260,8 +4286,8 @@ public class most_img extends Applet {
 
                             myokt = 3;
                         } else {
-                            px = wndXYAll(av[i * 3] + av[i * 3 + 2] * Math.cos(alpha), i * 8 + 17);
-                            py = wndYAll(-av[i * 3 + 1] + av[i * 3 + 2] * Math.sin(alpha), i * 8 + 17);
+                            px = wndXYAll(input[i * 3] + input[i * 3 + 2] * Math.cos(alpha), i * 8 + 17);
+                            py = wndYAll(-input[i * 3 + 1] + input[i * 3 + 2] * Math.sin(alpha), i * 8 + 17);
 
                             if (i == 0)
                                 okt(num1, px, py, D8_u1All_4);
@@ -4274,10 +4300,10 @@ public class most_img extends Applet {
                         }
                     }
                 } else {
-                    if (av[i * 3 + 1] > 0) {
-                        if (av[i * 3 + 2] > 0) {
-                            px = wndXYAll(-av[i * 3] - av[i * 3 + 2] * Math.cos(alpha), i * 8 + 18);
-                            py = wndYAll(av[i * 3 + 1] - av[i * 3 + 2] * Math.sin(alpha), i * 8 + 18);
+                    if (input[i * 3 + 1] > 0) {
+                        if (input[i * 3 + 2] > 0) {
+                            px = wndXYAll(-input[i * 3] - input[i * 3 + 2] * Math.cos(alpha), i * 8 + 18);
+                            py = wndYAll(input[i * 3 + 1] - input[i * 3 + 2] * Math.sin(alpha), i * 8 + 18);
 
                             if (i == 0)
                                 okt(num1, px, py, D8_u1All_5);
@@ -4288,8 +4314,8 @@ public class most_img extends Applet {
 
                             myokt = 5;
                         } else {
-                            px = wndXYAll(-av[i * 3] + av[i * 3 + 2] * Math.cos(alpha), i * 8 + 19);
-                            py = wndYAll(av[i * 3 + 1] + av[i * 3 + 2] * Math.sin(alpha), i * 8 + 19);
+                            px = wndXYAll(-input[i * 3] + input[i * 3 + 2] * Math.cos(alpha), i * 8 + 19);
+                            py = wndYAll(input[i * 3 + 1] + input[i * 3 + 2] * Math.sin(alpha), i * 8 + 19);
 
                             if (i == 0)
                                 okt(num1, px, py, D8_u1All_6);
@@ -4301,9 +4327,9 @@ public class most_img extends Applet {
                             myokt = 6;
                         }
                     } else {
-                        if (av[i * 3 + 2] > 0) {
-                            px = wndXYAll(-av[i * 3] - av[i * 3 + 2] * Math.cos(alpha), i * 8 + 20);
-                            py = wndYAll(-av[i * 3 + 1] - av[i * 3 + 2] * Math.sin(alpha), i * 8 + 20);
+                        if (input[i * 3 + 2] > 0) {
+                            px = wndXYAll(-input[i * 3] - input[i * 3 + 2] * Math.cos(alpha), i * 8 + 20);
+                            py = wndYAll(-input[i * 3 + 1] - input[i * 3 + 2] * Math.sin(alpha), i * 8 + 20);
 
                             if (i == 0)
                                 okt(num1, px, py, D8_u1All_7);
@@ -4314,8 +4340,8 @@ public class most_img extends Applet {
 
                             myokt = 7;
                         } else {
-                            px = wndXYAll(-av[i * 3] + av[i * 3 + 2] * Math.cos(alpha), i * 8 + 21);
-                            py = wndYAll(-av[i * 3 + 1] + av[i * 3 + 2] * Math.sin(alpha), i * 8 + 21);
+                            px = wndXYAll(-input[i * 3] + input[i * 3 + 2] * Math.cos(alpha), i * 8 + 21);
+                            py = wndYAll(-input[i * 3 + 1] + input[i * 3 + 2] * Math.sin(alpha), i * 8 + 21);
 
                             if (i == 0)
                                 okt(num1, px, py, D8_u1All_8);
@@ -4371,16 +4397,16 @@ public class most_img extends Applet {
 
 
         for (byte i = 0; i < 3; i++) {
-            mod = Math.sqrt(av[i] * av[i] + av[i + 3] * av[i + 3] + av[i + 6] * av[i + 6]);
+            mod = Math.sqrt(input[i] * input[i] + input[i + 3] * input[i + 3] + input[i + 6] * input[i + 6]);
 
             if (mod > radius[i + 3]) {
-                num1 = slow_ravnomer(25, av[i], av[i + 3], av[i + 6], delta[i + 3]);
+                num1 = slow_ravnomer(25, input[i], input[i + 3], input[i + 6], delta[i + 3]);
 
-                if (av[i] > 0) {
-                    if (av[i + 3] > 0) {
-                        if (av[i + 6] > 0) {
-                            px = wndXYAll(av[i] - av[i + 6] * Math.cos(alpha), (i + 3) * 8 + 14);
-                            py = wndYAll(av[i + 3] - av[i + 6] * Math.sin(alpha), (i + 3) * 8 + 14);
+                if (input[i] > 0) {
+                    if (input[i + 3] > 0) {
+                        if (input[i + 6] > 0) {
+                            px = wndXYAll(input[i] - input[i + 6] * Math.cos(alpha), (i + 3) * 8 + 14);
+                            py = wndYAll(input[i + 3] - input[i + 6] * Math.sin(alpha), (i + 3) * 8 + 14);
 
                             if (i == 0)
                                 okt(num1, px, py, D8_uAll1_1);
@@ -4391,8 +4417,8 @@ public class most_img extends Applet {
 
                             myokt = 1;
                         } else {
-                            px = wndXYAll(av[i] + av[i + 6] * Math.cos(alpha), (i + 3) * 8 + 15);
-                            py = wndYAll(av[i + 3] + av[i + 6] * Math.sin(alpha), (i + 3) * 8 + 15);
+                            px = wndXYAll(input[i] + input[i + 6] * Math.cos(alpha), (i + 3) * 8 + 15);
+                            py = wndYAll(input[i + 3] + input[i + 6] * Math.sin(alpha), (i + 3) * 8 + 15);
 
                             if (i == 0)
                                 okt(num1, px, py, D8_uAll1_2);
@@ -4404,9 +4430,9 @@ public class most_img extends Applet {
                             myokt = 2;
                         }
                     } else {
-                        if (av[i + 6] > 0) {
-                            px = wndXYAll(av[i] - av[i + 6] * Math.cos(alpha), (i + 3) * 8 + 16);
-                            py = wndYAll(-av[i + 3] - av[i + 6] * Math.sin(alpha), (i + 3) * 8 + 16);
+                        if (input[i + 6] > 0) {
+                            px = wndXYAll(input[i] - input[i + 6] * Math.cos(alpha), (i + 3) * 8 + 16);
+                            py = wndYAll(-input[i + 3] - input[i + 6] * Math.sin(alpha), (i + 3) * 8 + 16);
 
                             if (i == 0)
                                 okt(num1, px, py, D8_uAll1_3);
@@ -4417,8 +4443,8 @@ public class most_img extends Applet {
 
                             myokt = 3;
                         } else {
-                            px = wndXYAll(av[i] + av[i + 6] * Math.cos(alpha), (i + 3) * 8 + 17);
-                            py = wndYAll(-av[i + 3] + av[i + 6] * Math.sin(alpha), (i + 3) * 8 + 17);
+                            px = wndXYAll(input[i] + input[i + 6] * Math.cos(alpha), (i + 3) * 8 + 17);
+                            py = wndYAll(-input[i + 3] + input[i + 6] * Math.sin(alpha), (i + 3) * 8 + 17);
 
                             if (i == 0)
                                 okt(num1, px, py, D8_uAll1_4);
@@ -4431,10 +4457,10 @@ public class most_img extends Applet {
                         }
                     }
                 } else {
-                    if (av[i + 3] > 0) {
-                        if (av[i + 6] > 0) {
-                            px = wndXYAll(-av[i] - av[i + 6] * Math.cos(alpha), (i + 3) * 8 + 18);
-                            py = wndYAll(av[i + 3] - av[i + 6] * Math.sin(alpha), (i + 3) * 8 + 18);
+                    if (input[i + 3] > 0) {
+                        if (input[i + 6] > 0) {
+                            px = wndXYAll(-input[i] - input[i + 6] * Math.cos(alpha), (i + 3) * 8 + 18);
+                            py = wndYAll(input[i + 3] - input[i + 6] * Math.sin(alpha), (i + 3) * 8 + 18);
 
                             if (i == 0)
                                 okt(num1, px, py, D8_uAll1_5);
@@ -4445,8 +4471,8 @@ public class most_img extends Applet {
 
                             myokt = 5;
                         } else {
-                            px = wndXYAll(-av[i] + av[i + 6] * Math.cos(alpha), (i + 3) * 8 + 19);
-                            py = wndYAll(av[i + 3] + av[i + 6] * Math.sin(alpha), (i + 3) * 8 + 19);
+                            px = wndXYAll(-input[i] + input[i + 6] * Math.cos(alpha), (i + 3) * 8 + 19);
+                            py = wndYAll(input[i + 3] + input[i + 6] * Math.sin(alpha), (i + 3) * 8 + 19);
 
                             if (i == 0)
                                 okt(num1, px, py, D8_uAll1_6);
@@ -4458,9 +4484,9 @@ public class most_img extends Applet {
                             myokt = 6;
                         }
                     } else {
-                        if (av[i + 6] > 0) {
-                            px = wndXYAll(-av[i] - av[i + 6] * Math.cos(alpha), (i + 3) * 8 + 20);
-                            py = wndYAll(-av[i + 3] - av[i + 6] * Math.sin(alpha), (i + 3) * 8 + 20);
+                        if (input[i + 6] > 0) {
+                            px = wndXYAll(-input[i] - input[i + 6] * Math.cos(alpha), (i + 3) * 8 + 20);
+                            py = wndYAll(-input[i + 3] - input[i + 6] * Math.sin(alpha), (i + 3) * 8 + 20);
 
                             if (i == 0)
                                 okt(num1, px, py, D8_uAll1_7);
@@ -4471,8 +4497,8 @@ public class most_img extends Applet {
 
                             myokt = 7;
                         } else {
-                            px = wndXYAll(-av[i] + av[i + 6] * Math.cos(alpha), (i + 3) * 8 + 21);
-                            py = wndYAll(-av[i + 3] + av[i + 6] * Math.sin(alpha), (i + 3) * 8 + 21);
+                            px = wndXYAll(-input[i] + input[i + 6] * Math.cos(alpha), (i + 3) * 8 + 21);
+                            py = wndYAll(-input[i + 3] + input[i + 6] * Math.sin(alpha), (i + 3) * 8 + 21);
 
                             if (i == 0)
                                 okt(num1, px, py, D8_uAll1_8);
@@ -4493,7 +4519,7 @@ public class most_img extends Applet {
                 int ryy = wndY(-radius[i + 3], 20);
 
                 px = wndX(st * h, 19);
-                py = wndY(Math.signum(myMax3(av[i], av[i + 3], av[i + 6])) * mod, 20);
+                py = wndY(Math.signum(myMax3(input[i], input[i + 3], input[i + 6])) * mod, 20);
                 if (py - wndYMin < 400 && py - wndYMin > -1)
                     if (i == 0)
                         D8_uAll1[px - wndXMin + 1][py - wndYMin + 1] = myokt;

@@ -3,9 +3,6 @@ package org.osym.Calculation;
 import nativecalculator.NativeCalculatorLibrary;
 import org.bridj.Pointer;
 
-import java.nio.DoubleBuffer;
-import java.util.Arrays;
-
 
 public class CalculatorNativeBridj extends CalculatorBase {
 
@@ -80,7 +77,11 @@ public class CalculatorNativeBridj extends CalculatorBase {
             @Override
             public void apply(double v, Pointer<Double> doubles, double v2) {
                 if (doubles != null && listener != null) {
-                    listener.calculationReceivedPoints(v, doubles.getDoubles(dimension), v2);
+                    double [] input = doubles.getDoubles(dimension);
+                    listener.onReceivePoints(v, input, v2);
+                    doubles.release();
+                    input = null;
+                    doubles = null;
                 }
             }
         };
@@ -90,9 +91,13 @@ public class CalculatorNativeBridj extends CalculatorBase {
             public void apply(Pointer<Double> doubles, double v) {
                 if (listener != null) {
                     if (canceled.get() != 1) {
-                        listener.calculationDone(System.currentTimeMillis() - execStart, doubles.getDoubles(dimension), v);
+                        double [] input = doubles.getDoubles(dimension);
+                        listener.onDone(System.currentTimeMillis() - execStart, input, v);
+                        doubles.release();
+                        input = null;
+                        doubles = null;
                     } else {
-                        listener.calculationStopped();
+                        listener.onStop();
                     }
                 }
             }
@@ -102,6 +107,12 @@ public class CalculatorNativeBridj extends CalculatorBase {
         Pointer<NativeCalculatorLibrary.DoneCallback> doneCallbackPtr = Pointer.pointerTo(doneCallback);
 
         NativeCalculatorLibrary.run(coefsPtr, coefs[0].length, coefs2Ptr, inputPtr, dimension, from, total, step, paused, canceled, callbackPtr, doneCallbackPtr);
+
+        coefs2Ptr.release();
+        inputPtr.release();
+        coefsPtr.release();
+        callbackPtr.release();
+        doneCallbackPtr.release();
 
         isWorking = false;
     }

@@ -6,17 +6,17 @@ public interface Calculator {
     public interface CalcListener {
         public void calculationStarted(double from, double to);
 
-        public void calculationReceivedPoints(double iteration, double[] input, double step);
+        public void onReceivePoints(double iteration, double[] input, double step);
 
         public void calculationPaused();
 
         public void calculationResumed();
 
-        public void calculationStopped();
+        public void onStop();
 
         public void calculationFailed(Exception e);
 
-        public void calculationDone(long executionTime, double [] point, double iteration);
+        public void onDone(long executionTime, double[] point, double iteration);
     }
 
     public boolean isWorking();

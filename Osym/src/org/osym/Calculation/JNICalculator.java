@@ -42,7 +42,7 @@ public class JNICalculator extends CalculatorBase {
         System.out.println("Loading lib");
         try {
             if (OSTools.isMac()) {
-                System.load("/Users/ireshetnikov/Documents/University Projects/Osym/lib/" + LIB);
+                System.load("/Users/ireshetnikov/Documents/University Projects/OsymRepo/Osym/lib/" + LIB);
             } else {
                 System.load("C:/Users/Haron/Documents/GitHub/Osym/Osym/lib/" + LIB_WIN);
             }
@@ -55,6 +55,16 @@ public class JNICalculator extends CalculatorBase {
                 throw new RuntimeException(se);
             }
         }
+    }
+
+    public void stop() {
+        cancel = true;
+        cancelInternal();
+    }
+
+    public void pause() {
+        pause = !pause;
+        pauseInternal();
     }
 
     public static void loadLibraryFromJar(String path) throws IOException {
@@ -115,19 +125,10 @@ public class JNICalculator extends CalculatorBase {
         System.load(temp.getAbsolutePath());
     }
 
+
     private native void cancelInternal();
 
     private native void pauseInternal();
-
-    public void stop() {
-        cancel = true;
-        cancelInternal();
-    }
-
-    public void pause() {
-        pause = !pause;
-        pauseInternal();
-    }
 
     private native void run(double[] coefs,
                             int coefsLen,
@@ -165,7 +166,7 @@ public class JNICalculator extends CalculatorBase {
             @Override
             public void calculationReceivedPoints(double iteration, double[] input, double step) {
                 if (listener != null) {
-                    listener.calculationReceivedPoints(iteration, input, step);
+                    listener.onReceivePoints(iteration, input, step);
                 }
             }
 
@@ -173,9 +174,9 @@ public class JNICalculator extends CalculatorBase {
             public void calculationDone(double[] point, double iteration) {
                 if (listener != null) {
                     if (!cancel) {
-                        listener.calculationDone(System.currentTimeMillis() - execStart, point, iteration);
+                        listener.onDone(System.currentTimeMillis() - execStart, point, iteration);
                     } else {
-                        listener.calculationStopped();
+                        listener.onStop();
                     }
                 }
             }

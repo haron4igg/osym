@@ -24,20 +24,24 @@ void didProduceVector(double iteration, double* input, double step) {
     jdoubleArray inputObj = delegate_env->NewDoubleArray(arrayLen);
     delegate_env->SetDoubleArrayRegion(inputObj, 0, arrayLen, input);
     delegate_env->CallVoidMethod(delegate, delegate_method_produce, iteration, inputObj, step);
-    //delegate_env->DeleteLocalRef(inputObj);
+    delegate_env->DeleteLocalRef(inputObj);
+    inputObj = NULL;
+
 }
 
 void didDone(double* input, double iteration) {
     jdoubleArray inputObj = delegate_env->NewDoubleArray(arrayLen);
     delegate_env->SetDoubleArrayRegion(inputObj, 0, arrayLen, input);
     delegate_env->CallVoidMethod(delegate, delegate_method_done, inputObj, iteration);
+    delegate_env->DeleteLocalRef(inputObj);
+    inputObj = NULL;
 }
 
-void JNICALL Java_org_osym_Calculation_JNICalculator_pause(JNIEnv *env, jobject caller) {
+void JNICALL Java_org_osym_Calculation_JNICalculator_pauseInternal(JNIEnv *env, jobject caller) {
     paused = (paused == 0) ? 1 : 0;
 }
 
-void JNICALL Java_org_osym_Calculation_JNICalculator_cancel(JNIEnv *env, jobject caller) {
+void JNICALL Java_org_osym_Calculation_JNICalculator_cancelInternal(JNIEnv *env, jobject caller) {
     paused = 0;
     canceled = 1;
 }

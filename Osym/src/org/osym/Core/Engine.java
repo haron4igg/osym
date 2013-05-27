@@ -306,7 +306,7 @@ public class Engine implements ImageManager.ImageManagerDelegate {
         }
 
         @Override
-        public void calculationStopped() {
+        public void onStop() {
             if (delegate != null)
                 delegate.calculationDone();
         }
@@ -318,7 +318,7 @@ public class Engine implements ImageManager.ImageManagerDelegate {
         }
 
         @Override
-        public void calculationReceivedPoints(double iteration, double[] point, double step) {
+        public void onReceivePoints(double iteration, double[] point, double step) {
             totalPointsProduced++;
 
             functionsManager.kiral_func(point, iteration);
@@ -350,7 +350,7 @@ public class Engine implements ImageManager.ImageManagerDelegate {
         }
 
         @Override
-        public void calculationDone(long executionTime, double [] point, double iteration) {
+        public void onDone(long executionTime, double[] point, double iteration) {
             System.out.println("Calculation done in: " + executionTime);
             if (!scopeProcessed) {
                 int dim2 = currentPoint.length / 2;

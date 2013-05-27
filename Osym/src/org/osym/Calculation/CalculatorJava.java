@@ -164,16 +164,16 @@ public class CalculatorJava extends CalculatorBase implements Calculator {
             solveByRK(input, coefs, coefs2, step);
 
             if (listener != null) {
-                listener.calculationReceivedPoints(iteration, input.clone(), step);
+                listener.onReceivePoints(iteration, input.clone(), step);
             }
 
             iteration += step;
         }
         if (listener != null) {
             if (!cancel) {
-                listener.calculationDone(System.currentTimeMillis() - execStart, input, iteration);
+                listener.onDone(System.currentTimeMillis() - execStart, input, iteration);
             } else {
-                listener.calculationStopped();
+                listener.onStop();
             }
         }
         isWorking = false;

@@ -3,7 +3,9 @@ package org.osym.Core;
 import org.osym.Calculation.*;
 import org.osym.Images.Image2D;
 import org.osym.Images.ImageManager;
+import org.osym.Images.ImageTools;
 
+import java.awt.*;
 import java.io.*;
 import java.util.HashMap;
 
@@ -120,7 +122,24 @@ public class Engine implements ImageManager.ImageManagerDelegate {
 
         int dim = getDimensions(this.calculationMode);
 
-        images.put(0, new Image2D("Вычислительная погрешность", imagesWidth, imagesHeight, dim+1,dim));
+        images.put(0, new Image2D("Вычислительная погрешность", imagesWidth, imagesHeight, dim+1,dim, new Image2D.PointTransformer() {
+            @Override
+            public Image2D.ImagePoint transform(double[] vector, double[][] scope, double iteration, Functions functions) {
+                int x = ImageTools.wndX(iteration, vector.length + 1, imagesWidth, scope);
+                int y = ImageTools.wndY(functions.EUK(vector), vector.length, imagesHeight, scope);
+                return new Image2D.ImagePoint(x, y, new Color(0));
+            }
+        }));
+
+        images.put(0, new Image2D("Вычислительная погрешность", imagesWidth, imagesHeight, dim+1,dim, new Image2D.PointTransformer() {
+            @Override
+            public Image2D.ImagePoint transform(double[] vector, double[][] scope, double iteration, Functions functions) {
+                int x = ImageTools.wndX(iteration, vector.length + 1, imagesWidth, scope);
+                int y = ImageTools.wndY(functions.EUK(vector), vector.length, imagesHeight, scope);
+                return new Image2D.ImagePoint(x, y, new Color(0));
+            }
+        }));
+
     }
 
     void resetConfiguration() {
@@ -263,6 +282,9 @@ public class Engine implements ImageManager.ImageManagerDelegate {
             }
 
             calculator.runAsync(coefsMatrix, coefsMass, currentPoint, startIteration, iterationLimit, calculationStep, progressHandler);
+
+            System.gc();
+
         }
     }
 

@@ -2,57 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48d44c8b-3f7c-4414-b932-238adfe816e6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Osym/out/test/Osym/com/intellij/uiDesigner/core/AbstractLayout.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Osym/out/test/Osym/com/intellij/uiDesigner/core/DimensionInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Osym/out/test/Osym/com/intellij/uiDesigner/core/GridConstraints.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Osym/out/test/Osym/com/intellij/uiDesigner/core/GridLayoutManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Osym/out/test/Osym/com/intellij/uiDesigner/core/HorizontalInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Osym/out/test/Osym/com/intellij/uiDesigner/core/LayoutState.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Osym/out/test/Osym/com/intellij/uiDesigner/core/Spacer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Osym/out/test/Osym/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Osym/out/test/Osym/com/intellij/uiDesigner/core/SupportCode.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Osym/out/test/Osym/com/intellij/uiDesigner/core/Util.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Osym/out/test/Osym/com/intellij/uiDesigner/core/VerticalInfo.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Calculation/Calculator$CalcListener.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Calculation/Calculator$CalcListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Calculation/CalculatorBase.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Calculation/CalculatorBase.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Calculation/CalculatorJava.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Calculation/CalculatorJava.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Calculation/CalculatorNativeBridj$1.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Calculation/CalculatorNativeBridj$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Calculation/CalculatorNativeBridj$2.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Calculation/CalculatorNativeBridj$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Calculation/CalculatorNativeBridj.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Calculation/CalculatorNativeBridj.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Core/Engine$ProgressHandler.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Core/Engine$ProgressHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Calculation/JNICalculator$1.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Calculation/JNICalculator$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Calculation/JNICalculator.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Calculation/JNICalculator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Core/Engine.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Core/Engine.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/artifacts/Osym/Osym.jar" afterPath="$PROJECT_DIR$/../Osym/out/artifacts/Osym/Osym.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../NativeCalc/JNICalculator/JNICalculator.xcodeproj/project.xcworkspace/xcuserdata/ireshetnikov.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/../NativeCalc/JNICalculator/JNICalculator.xcodeproj/project.xcworkspace/xcuserdata/ireshetnikov.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../NativeCalc/NativeCalculator/NativeCalculator.xcodeproj/project.xcworkspace/xcuserdata/ireshetnikov.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/../NativeCalc/NativeCalculator/NativeCalculator.xcodeproj/project.xcworkspace/xcuserdata/ireshetnikov.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/lib/libJNICalculator.dylib" afterPath="$PROJECT_DIR$/../Osym/lib/libJNICalculator.dylib" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/src/org/osym/Calculation/Calculator.java" afterPath="$PROJECT_DIR$/../Osym/src/org/osym/Calculation/Calculator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/src/org/osym/Calculation/CalculatorJava.java" afterPath="$PROJECT_DIR$/../Osym/src/org/osym/Calculation/CalculatorJava.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/src/org/osym/Calculation/CalculatorNativeBridj.java" afterPath="$PROJECT_DIR$/../Osym/src/org/osym/Calculation/CalculatorNativeBridj.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/src/org/osym/Core/Engine.java" afterPath="$PROJECT_DIR$/../Osym/src/org/osym/Core/Engine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/src/org/osym/Calculation/JNICalculator.java" afterPath="$PROJECT_DIR$/../Osym/src/org/osym/Calculation/JNICalculator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/.idea/ant.xml" afterPath="$PROJECT_DIR$/../Osym/.idea/ant.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../Osym/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../NativeCalc/NativeCalculator/osym_test/main.c" afterPath="$PROJECT_DIR$/../NativeCalc/NativeCalculator/osym_test/main.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/most_img.java" afterPath="$PROJECT_DIR$/src/most_img.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../NativeCalc/JNICalculator/Sources/org_osym_Calculation_JNICalculator.cpp" afterPath="$PROJECT_DIR$/../NativeCalc/JNICalculator/Sources/org_osym_Calculation_JNICalculator.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../NativeCalc/JNICalculator/Sources/org_osym_Calculation_JNICalculator.h" afterPath="$PROJECT_DIR$/../NativeCalc/JNICalculator/Sources/org_osym_Calculation_JNICalculator.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/src/org/osym/Images/Image2D.java" afterPath="$PROJECT_DIR$/../Osym/src/org/osym/Images/Image2D.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/src/org/osym/Images/ImageManager.java" afterPath="$PROJECT_DIR$/../Osym/src/org/osym/Images/ImageManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/one_img.java" afterPath="$PROJECT_DIR$/src/one_img.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Osym/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="EFE_Prototype.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/fragment.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369688123046" ignored="false" />
+    <file path="/fragment.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369773844011" ignored="false" />
     <file path="$PROJECT_DIR$/../Osym/src/org/osym/Calculation/CalculatorNative.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369414797146" ignored="false" />
     <file path="/CalculatorNative.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369414779939" ignored="false" />
     <file path="/most_img.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369688869641" ignored="false" />
-    <file path="$PROJECT_DIR$/../Osym/src/org/osym/Images/ImageManager.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369581261710" ignored="false" />
-    <file path="/ImageManager.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369581219878" ignored="false" />
-    <file path="$PROJECT_DIR$/../Osym/src/org/osym/Images/Image2D.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369582848608" ignored="false" />
-    <file path="/one_img.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369586103970" ignored="false" />
-    <file path="/Dummy.txt" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369687849989" ignored="false" />
+    <file path="/ImageManager.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369764375217" ignored="false" />
+    <file path="/one_img.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369773867339" ignored="false" />
+    <file path="/Dummy.txt" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369761559043" ignored="false" />
+    <file path="/Image2D.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369764461184" ignored="false" />
+    <file path="/Engine.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369764362243" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +44,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -109,7 +82,6 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -128,22 +100,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="most_img.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="most_img.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/most_img.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1770" column="134" selection-start="65404" selection-end="65404" vertical-scroll-proportion="0.53801167">
+            <state line="246" column="61" selection-start="8741" selection-end="8778" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="one_img.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="one_img.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/one_img.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2688" column="26" selection-start="107803" selection-end="107803" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="2797" column="94" selection-start="111775" selection-end="111775" vertical-scroll-proportion="0.14784394">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -189,8 +159,8 @@
         <option value="$PROJECT_DIR$/src/Calculation_Modules/TripletFunctions.java" />
         <option value="$PROJECT_DIR$/src/OSYMApplet.java" />
         <option value="$PROJECT_DIR$/src/Enjine.java" />
-        <option value="$PROJECT_DIR$/src/one_img.java" />
         <option value="$PROJECT_DIR$/src/most_img.java" />
+        <option value="$PROJECT_DIR$/src/one_img.java" />
       </list>
     </option>
   </component>
@@ -235,6 +205,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -329,30 +309,20 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="true" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="efe_prototype" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -369,8 +339,8 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -454,13 +424,13 @@
     </configuration>
     <configuration default="false" name="applet" type="Applet" factoryName="Applet">
       <module name="No_triplet" />
-      <option name="MAIN_CLASS_NAME" value="most_img" />
+      <option name="MAIN_CLASS_NAME" value="one_img" />
       <option name="HTML_FILE_NAME" />
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="file://$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" value="-Xmx1500m" />
+      <option name="VM_PARAMETERS" value="-Xmx1500m -server" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
       <RunnerSettings RunnerId="Debug">
@@ -549,7 +519,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="22" width="1859" height="1058" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -567,8 +537,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.268064" sideWeight="0.19189766" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.783848" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.268064" sideWeight="0.39872068" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40938166" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.268064" sideWeight="0.3976546" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40938166" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -731,18 +701,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/one_img.java">
+    <entry file="file://$PROJECT_DIR$/src/most_img.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2688" column="26" selection-start="107803" selection-end="107803" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="246" column="61" selection-start="8741" selection-end="8778" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/most_img.java">
+    <entry file="file://$PROJECT_DIR$/src/one_img.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1770" column="134" selection-start="65404" selection-end="65404" vertical-scroll-proportion="0.53801167">
+        <state line="2797" column="94" selection-start="111775" selection-end="111775" vertical-scroll-proportion="0.14784394">
           <folding />
         </state>
       </provider>

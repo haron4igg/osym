@@ -80,10 +80,9 @@ public class ImageManager {
                 i.setScope(s);
             }
 
-            int x = ImageTools.wndX(iteration, potentials.length + 1, imageWidth, scopeMax);
-            int y = ImageTools.wndY(funcManager.EUK(potentials), potentials.length, imageHeight, scopeMax);
 
-            i.paintPixel(x, y, (short)0);
+            i.paintVector(potentials, scopeMax, iteration, funcManager);
+            //i.paintPixel(x, y, (short)0);
         }
     }
 

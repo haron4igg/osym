@@ -1707,9 +1707,8 @@ public class most_img extends Applet {
                 tnegolh = tnegol;
 
 
-
-                b = new double[][] {
-                        { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+                b = new double[][]{
+                        {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
                         {0.07407407407407407, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
                         {0.027777777777777776, 0.08333333333333333, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
                         {0.041666666666666664, 0.0, 0.125, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
@@ -1729,8 +1728,8 @@ public class most_img extends Applet {
                         {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0}
                 };
 
-                c = new double[] {0.04880952380952381, 0.0, 0.0, 0.0, 0.0, 0.3238095238095238, 0.2571428571428571, 0.2571428571428571, 0.03214285714285714, 0.03214285714285714, 0.0, 0.0, 0.04880952380952381, 0.0, 0.0, 0.0, 0.0, 0.0};
-                input = new double[]  {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.5446230076646713, 0.257800690054833, 0.25436137854197866, 0.2461605091991794, -0.3193534630602443, 0.628712774525114, 0.5874934622379206, -0.5699922058548407, 0.5867911096969345};
+                c = new double[]{0.04880952380952381, 0.0, 0.0, 0.0, 0.0, 0.3238095238095238, 0.2571428571428571, 0.2571428571428571, 0.03214285714285714, 0.03214285714285714, 0.0, 0.0, 0.04880952380952381, 0.0, 0.0, 0.0, 0.0, 0.0};
+                input = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.5446230076646713, 0.257800690054833, 0.25436137854197866, 0.2461605091991794, -0.3193534630602443, 0.628712774525114, 0.5874934622379206, -0.5699922058548407, 0.5867911096969345};
 
 
                 //long time = nativeCalc.run(b,c,MaxMin,input,tstart,tb,h);
@@ -1738,8 +1737,7 @@ public class most_img extends Applet {
                 //System.out.println("Execution time: " + time);
 
                 long startTime = System.currentTimeMillis();
-               // Calculator calc = new Calculator(new TripletFunctions());
-
+                // Calculator calc = new Calculator(new TripletFunctions());
 
 
                 while (tlast < tb) {
@@ -1762,11 +1760,11 @@ public class most_img extends Applet {
                     px = wndX(tlast, 19);
                     py = wndY(myE, 18);
                     if (py - wndYMin < 400 && py - wndYMin > 50) {
-                        //if (img_EUK[px - wndXMin + 1][py - wndYMin + 1] != 1) {
+                        if (img_EUK[px - wndXMin + 1][py - wndYMin + 1] != 1) {
                             img_EUK[px - wndXMin + 1][py - wndYMin + 1] = 1;
                             g.fillRect(px, py, 1, 1);
                             //g.fillOval(px, py, 1, 1);
-                        //}
+                        }
 
                     }
 
@@ -1811,8 +1809,11 @@ public class most_img extends Applet {
                     px = wndX(tlast, 19);
                     py = wndY(myE, 18);
                     if (py - wndYMin < 400 && py - wndYMin > -2) {
-                        img_EUK[px - wndXMin + 1][py - wndYMin + 1] = 1;
-                        g.fillOval(px, py, 1, 1);
+                        if (img_EUK[px - wndXMin + 1][py - wndYMin + 1] != 1) {
+                            img_EUK[px - wndXMin + 1][py - wndYMin + 1] = 1;
+                            g.fillRect(px, py, 1, 1);
+                            //g.fillOval(px, py, 1, 1);
+                        }
                     }
 
                     tlast += h;

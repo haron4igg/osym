@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1369602257 source:c:\users\haron\documents\github\osym\nativecalc\jnicalculator\sources\org_osym_calculation_jnicalculator.cpp
+1369693123 source:c:\users\haron\documents\github\osym\nativecalc\jnicalculator\sources\org_osym_calculation_jnicalculator.cpp
 	<stdio.h>
 	"org_osym_Calculation_JNICalculator.h"
 	"calculator.h"
 
-1369601864 c:\users\haron\documents\github\osym\nativecalc\jnicalculator\sources\org_osym_calculation_jnicalculator.h
+1369693123 c:\users\haron\documents\github\osym\nativecalc\jnicalculator\sources\org_osym_calculation_jnicalculator.h
 	<jni.h>
+	<JavaVM/jni.h>
 
 1369327958 c:\users\haron\documents\github\osym\nativecalc\nativecalculator\sources\calculator.h
 

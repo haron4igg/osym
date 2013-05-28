@@ -1,0 +1,25 @@
+EXPORTS
+    DoubleRand @1
+    EUK @2
+    K @3
+    Svec @4
+    U @5
+    calculateVector @6
+    fillMatrix @7
+    func1 @8
+    func2 @9
+    func3 @10
+    func4 @11
+    func5 @12
+    func6 @13
+    func7 @14
+    func8 @15
+    masRK4 @16
+    masRKB6 @17
+    masRKF8 @18
+    mk3 @19 DATA
+    run @20
+    setupStartPoint @21
+    solveByRK @22
+    vectorSumm @23
+    zapolnenie @24

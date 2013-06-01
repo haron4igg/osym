@@ -7,10 +7,13 @@
 	<File name="..\Sources\org_osym_Calculation_JNICalculator.cpp" open="1" top="0" tabpos="3">
 		<Cursor position="226" topLine="0" />
 	</File>
-	<File name="..\Sources\org_osym_Calculation_JNICalculator.h" open="1" top="1" tabpos="2">
+	<File name="..\Sources\org_osym_Calculation_JNICalculator.h" open="1" top="0" tabpos="2">
 		<Cursor position="75" topLine="0" />
 	</File>
 	<File name="..\..\NativeCalculator\Sources\base_func.c" open="1" top="0" tabpos="4">
 		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="..\..\NativeCalculator\Sources\octplet_func.c" open="1" top="0" tabpos="5">
+		<Cursor position="14544" topLine="137" />
 	</File>
 </CodeBlocks_layout_file>

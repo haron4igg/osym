@@ -1,0 +1,4 @@
+EXPORTS
+    Java_org_osym_Calculation_JNICalculator_cancelInternal = Java_org_osym_Calculation_JNICalculator_cancelInternal@8 @1
+    Java_org_osym_Calculation_JNICalculator_pauseInternal = Java_org_osym_Calculation_JNICalculator_pauseInternal@8 @2
+    Java_org_osym_Calculation_JNICalculator_run = Java_org_osym_Calculation_JNICalculator_run@56 @3

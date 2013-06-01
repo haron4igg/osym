@@ -58,6 +58,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\..\NativeCalculator\Sources\calculator.h" />
+		<Unit filename="..\..\NativeCalculator\Sources\octplet_func.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\NativeCalculator\Sources\octplet_func.h" />
 		<Unit filename="..\..\NativeCalculator\Sources\triplet_func.c">
 			<Option compilerVar="CC" />
 		</Unit>

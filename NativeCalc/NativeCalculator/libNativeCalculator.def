@@ -14,12 +14,26 @@ EXPORTS
     func6 @13
     func7 @14
     func8 @15
-    masRK4 @16
-    masRKB6 @17
-    masRKF8 @18
-    mk3 @19 DATA
-    run @20
-    setupStartPoint @21
-    solveByRK @22
-    vectorSumm @23
-    zapolnenie @24
+    functions @16 DATA
+    masRK4 @17
+    masRKB6 @18
+    masRKF8 @19
+    mk3 @20 DATA
+    octpletFunctions @21 DATA
+    ofunc1 @22
+    ofunc2 @23
+    ofunc3 @24
+    ofunc4 @25
+    ofunc5 @26
+    ofunc6 @27
+    ofunc7 @28
+    ofunc8 @29
+    run @30
+    setupStartPoint @31
+    solveByRK @32
+    temp2dBuffer @33 DATA
+    temp2drowLen @34 DATA
+    tempBuffer @35 DATA
+    tripletFunctions @36 DATA
+    vectorSumm @37
+    zapolnenie @38

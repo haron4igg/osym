@@ -54,6 +54,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Sources\calculator.h" />
+		<Unit filename="Sources\octplet_func.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Sources\octplet_func.h" />
 		<Unit filename="Sources\triplet_func.c">
 			<Option compilerVar="CC" />
 		</Unit>

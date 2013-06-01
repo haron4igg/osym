@@ -49,7 +49,7 @@ public class Engine implements ImageManager.ImageManagerDelegate {
     protected long totalExecutionTime = 0;
     protected long totalPointsProduced = 0;
 
-    protected Boolean testMode = true;
+    protected Boolean testMode = false;
 
     protected Boolean scopeProcessed = false;
     protected Boolean restartNow = false;
@@ -204,7 +204,8 @@ public class Engine implements ImageManager.ImageManagerDelegate {
                     break;
                 }
                 default:
-                    calculator = new CalculatorJava(functionsManager);
+                    calculator = new JNICalculator();
+                    //calculator = new CalculatorJava(functionsManager);
             }
 
 

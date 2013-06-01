@@ -1,11 +1,7 @@
 package org.osym.Calculation;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Haron
- * Date: 11.02.12
- * Time: 14:58
- * To change this template use File | Settings | File Templates.
+ * Copyright (c) 2013. Igor Reshetnikov. All rights reserved.
  */
 
 import sun.awt.Mutex;

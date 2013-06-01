@@ -2,7 +2,7 @@ package org.osym.Images;
 
 import org.osym.Calculation.Functions;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -32,10 +32,19 @@ public class ImageManager {
     public Functions funcManager = null;
     protected ThreadedPainter painter = null;
 
-    HashMap<Integer, Image2D> images2D = new HashMap<Integer, Image2D>();
+    ArrayList<Image2D> images2D = new ArrayList<Image2D>();
 
+    boolean scopeComplete = false;
 
-    public HashMap<Integer, Image2D> getImages2D() {
+    public boolean isScopeComplete() {
+        return scopeComplete;
+    }
+
+    public void setScopeComplete(boolean scopeComplete) {
+        this.scopeComplete = scopeComplete;
+    }
+
+    public ArrayList<Image2D> getImages2D() {
         return images2D;
     }
 
@@ -63,25 +72,26 @@ public class ImageManager {
         painter.performPaintOperation(iteration, potentials);
     }
 
-    public void setImages2D(HashMap<Integer, Image2D> images2D) {
+    public void setImages2D(ArrayList<Image2D> images2D) {
         this.images2D = images2D;
     }
 
     public void paintImages(double iteration, double[] potentials) {
-        for (Image2D i : images2D.values()) {
+        for (Image2D i : images2D) {
+            if (!i.isRequireScope() || isScopeComplete()) {
+                if (i.getScope() == null) {
 
-            if (i.getScope() == null) {
+                    double[][] s = new double[][]{
+                            {scopeMax[i.getxScope()][0], scopeMax[i.getxScope()][1]},
+                            {scopeMax[i.getyScope()][0], scopeMax[i.getyScope()][1]}
+                    };
 
-                double[][] s = new double[][] {
-                        {scopeMax[i.getxScope()][0],scopeMax[i.getxScope()][1]},
-                        {scopeMax[i.getyScope()][0],scopeMax[i.getyScope()][1]}
-                };
+                    i.setScope(s);
+                }
 
-                i.setScope(s);
+                i.paintVector(potentials, scopeMax, iteration, funcManager);
             }
 
-
-            i.paintVector(potentials, scopeMax, iteration, funcManager);
             //i.paintPixel(x, y, (short)0);
         }
     }
@@ -142,8 +152,6 @@ public class ImageManager {
                     if (delegate != null) {
                         delegate.paintOperationDone(operation.iteration);
                     }
-
-
                 }
             } catch (Exception e) {
                 if (delegate != null) {

@@ -2,14 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48d44c8b-3f7c-4414-b932-238adfe816e6" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Osym/src/org/osym/Core/ImageFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Osym/src/org/osym/Core/OctupletImagesFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Osym/src/org/osym/Core/TripletImagesFactory.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Core/Engine$2.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Core/Engine$1.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Core/Engine$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Core/Engine$CalculationMethod.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Core/Engine$CalculationMethod.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Core/Engine$CalculationMode.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Core/Engine$CalculationMode.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Core/Engine$ProgressHandler.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Core/Engine$ProgressHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Core/Engine$StartingConditions.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Core/Engine$StartingConditions.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Core/Engine.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Core/Engine.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Images/Image2D.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Images/Image2D.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Images/Image3D.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Images/Image3D.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Images/ImageManager$ThreadedPainter$PaintOperation.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Images/ImageManager$ThreadedPainter$PaintOperation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Images/ImageManager$ThreadedPainter.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Images/ImageManager$ThreadedPainter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Images/ImageManager.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Images/ImageManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$10.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$11.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$12.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$13.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$13.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$14.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$14.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$15.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$15.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$16.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$16.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$17.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$17.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$2.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$3.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$4.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$5.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$6.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$7.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$8.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$9.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow.class" afterPath="$PROJECT_DIR$/../Osym/out/production/Osym/org/osym/Gui/MainWindow.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/out/artifacts/Osym/Osym.jar" afterPath="$PROJECT_DIR$/../Osym/out/artifacts/Osym/Osym.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../NativeCalc/JNICalculator/JNICalculator.xcodeproj/project.xcworkspace/xcuserdata/ireshetnikov.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/../NativeCalc/JNICalculator/JNICalculator.xcodeproj/project.xcworkspace/xcuserdata/ireshetnikov.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../NativeCalc/NativeCalculator/NativeCalculator.xcodeproj/project.xcworkspace/xcuserdata/ireshetnikov.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/../NativeCalc/NativeCalculator/NativeCalculator.xcodeproj/project.xcworkspace/xcuserdata/ireshetnikov.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/src/org/osym/Core/Engine.java" afterPath="$PROJECT_DIR$/../Osym/src/org/osym/Core/Engine.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/src/org/osym/Images/Image2D.java" afterPath="$PROJECT_DIR$/../Osym/src/org/osym/Images/Image2D.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/src/org/osym/Images/Image3D.java" afterPath="$PROJECT_DIR$/../Osym/src/org/osym/Images/Image3D.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/src/org/osym/Images/ImageManager.java" afterPath="$PROJECT_DIR$/../Osym/src/org/osym/Images/ImageManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/src/org/osym/Gui/MainWindow.form" afterPath="$PROJECT_DIR$/../Osym/src/org/osym/Gui/MainWindow.form" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/src/org/osym/Gui/MainWindow.java" afterPath="$PROJECT_DIR$/../Osym/src/org/osym/Gui/MainWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/.idea/ant.xml" afterPath="$PROJECT_DIR$/../Osym/.idea/ant.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ant.xml" afterPath="$PROJECT_DIR$/.idea/ant.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../Osym/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/one_img.java" afterPath="$PROJECT_DIR$/src/one_img.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Osym/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Osym/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -20,11 +56,17 @@
     <file path="$PROJECT_DIR$/../Osym/src/org/osym/Calculation/CalculatorNative.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369414797146" ignored="false" />
     <file path="/CalculatorNative.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369414779939" ignored="false" />
     <file path="/most_img.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369688869641" ignored="false" />
-    <file path="/ImageManager.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369764375217" ignored="false" />
+    <file path="/ImageManager.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369781576801" ignored="false" />
     <file path="/one_img.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369773867339" ignored="false" />
-    <file path="/Dummy.txt" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369761559043" ignored="false" />
-    <file path="/Image2D.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369764461184" ignored="false" />
-    <file path="/Engine.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369764362243" ignored="false" />
+    <file path="/Dummy.txt" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369775613731" ignored="false" />
+    <file path="/Image2D.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369780448451" ignored="false" />
+    <file path="/Engine.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369782443792" ignored="false" />
+    <file path="/ImagesFactory.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369781427839" ignored="false" />
+    <file path="/TripletImagesFactory.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369778377361" ignored="false" />
+    <file path="/ImageFactory.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369778325815" ignored="false" />
+    <file path="/OctupletImagesFactory.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369781464194" ignored="false" />
+    <file path="/Image3D.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369778706424" ignored="false" />
+    <file path="/MainWindow.java" changelist="48d44c8b-3f7c-4414-b932-238adfe816e6" time="1369782349400" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +136,7 @@
       <file leaf-file-name="OctpletFunctions.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Calculation_Modules/OctpletFunctions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="31" selection-start="12100" selection-end="12100" vertical-scroll-proportion="0.0">
+            <state line="66" column="3" selection-start="7061" selection-end="7061" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -103,7 +145,7 @@
       <file leaf-file-name="most_img.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/most_img.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="246" column="61" selection-start="8741" selection-end="8778" vertical-scroll-proportion="0.0">
+            <state line="235" column="63" selection-start="8220" selection-end="8254" vertical-scroll-proportion="-27.807692">
               <folding />
             </state>
           </provider>
@@ -112,7 +154,7 @@
       <file leaf-file-name="one_img.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/one_img.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2797" column="94" selection-start="111775" selection-end="111775" vertical-scroll-proportion="0.14784394">
+            <state line="2908" column="4" selection-start="96827" selection-end="96827" vertical-scroll-proportion="4.7769027">
               <folding />
             </state>
           </provider>
@@ -175,7 +217,7 @@
     <option name="x" value="-1" />
     <option name="y" value="22" />
     <option name="width" value="1859" />
-    <option name="height" value="1058" />
+    <option name="height" value="878" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -205,30 +247,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EFE_Prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="No_triplet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -309,20 +327,44 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EFE_Prototype" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="No_triplet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="efe_prototype" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -339,8 +381,8 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -518,7 +560,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="22" width="1859" height="1058" extended-state="0" />
+    <frame x="-1" y="22" width="1859" height="878" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -532,13 +574,13 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21002132" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20976253" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32897863" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.268064" sideWeight="0.19189766" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.268064" sideWeight="0.19261214" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.783848" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.268064" sideWeight="0.3976546" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40938166" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.268064" sideWeight="0.39841688" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40897098" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -652,11 +694,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Resources/calculate_kernel.cl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="16" selection-start="4809" selection-end="4809" vertical-scroll-proportion="0.41295546" />
-      </provider>
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="149" column="16" selection-start="4809" selection-end="4809" vertical-scroll-proportion="0.41295546" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Calculation_Modules/CalculatorOpenCL.java">
@@ -687,13 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Calculation_Modules/OctpletFunctions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="31" selection-start="12100" selection-end="12100" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Calculation_Modules/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="104" column="0" selection-start="3406" selection-end="3406" vertical-scroll-proportion="0.0">
@@ -701,16 +736,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Calculation_Modules/OctpletFunctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="3" selection-start="7061" selection-end="7061" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/most_img.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="246" column="61" selection-start="8741" selection-end="8778" vertical-scroll-proportion="0.0">
+        <state line="235" column="63" selection-start="8220" selection-end="8254" vertical-scroll-proportion="-27.807692">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/one_img.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2797" column="94" selection-start="111775" selection-end="111775" vertical-scroll-proportion="0.14784394">
+        <state line="2908" column="4" selection-start="96827" selection-end="96827" vertical-scroll-proportion="4.7769027">
           <folding />
         </state>
       </provider>

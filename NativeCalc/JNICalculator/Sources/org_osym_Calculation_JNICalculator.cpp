@@ -50,7 +50,9 @@ void JNICALL Java_org_osym_Calculation_JNICalculator_cancelInternal(JNIEnv *env,
  public void calculationReceivedPoints(double iteration, double[] input, double step);
 
  public void calculationDone(double[] point, double iteration);
+ 
  */
+
 
 void JNICALL Java_org_osym_Calculation_JNICalculator_run(
                                                          JNIEnv *env,

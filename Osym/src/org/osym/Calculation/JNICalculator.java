@@ -15,7 +15,7 @@ public class JNICalculator extends CalculatorBase {
     Calculator.CalcListener listener = null;
 
     public boolean isWorking = false;
-    boolean cancel = false;
+    boolean canceInternationall = false;
     boolean pause = false;
 
     private interface JNICalculatorListener {

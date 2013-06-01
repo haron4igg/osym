@@ -12,7 +12,7 @@
 
 void zapolnenie(double* cc, double* bb, double* c, double** b, int mp);
 
-double mk3 = 1.73205080756888;
+double const mk3 = 1.73205080756888;
 
 double Svec(double* v1, double* v2) {
     return (double) (v1[0] * v2[0] + v1[1] * v2[1] + v1[2] * v2[2]);

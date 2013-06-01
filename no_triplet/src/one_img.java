@@ -2906,7 +2906,8 @@ public class one_img extends Applet{
 			}
 		}
 	}
-	public void zapolnGrap(double st, double[] delta)
+
+	public void zapolnGrap(double iteration, double[] delta)
 	{   
 		my3D(av[0], av[1], av[2], 0, img3D_u1All, delta);
 		my3D(av[3], av[4], av[5], 1, img3D_u2All, delta);
@@ -3023,13 +3024,13 @@ public class one_img extends Applet{
 		
 		int px, py;
 		
-		px = wndX(st, 49);
+		px = wndX(iteration, 49);
 		
 		if(utime[48][px - wndXMin + 1] == -1)
 		{
 			for(int j = 0; j < 48; j++)
 				utime[j][px - wndXMin + 1] = av[j];
-			utime[48][px - wndXMin + 1] = st;
+			utime[48][px - wndXMin + 1] = iteration;
 		}
 		
 		py = wndY(EUK(), 48);

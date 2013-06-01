@@ -44,6 +44,16 @@ public class Image2D extends AbstractImage {
     protected static final int yOffset = 40;
     protected static final int padding = 3;
 
+    boolean requireScope;
+
+    public boolean isRequireScope() {
+        return requireScope;
+    }
+
+    public void setRequireScope(boolean requireScope) {
+        this.requireScope = requireScope;
+    }
+
     public int getxScope() {
         return xScope;
     }
@@ -63,10 +73,12 @@ public class Image2D extends AbstractImage {
         }
     }
 
-    public Image2D(String name, int width, int height, int scopeX, int scopeY, PointTransformer transformer) {
+    public Image2D(String name, int width, int height, int scopeX, int scopeY, PointTransformer transformer, boolean isRequireScope) {
         super(name, width, height);
 
         this.transformer = transformer;
+
+        requireScope = isRequireScope;
 
         xScope = scopeX;
         yScope = scopeY;

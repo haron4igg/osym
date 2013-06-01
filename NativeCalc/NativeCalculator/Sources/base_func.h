@@ -9,6 +9,8 @@
 #ifndef NativeCalculator_base_func_h
 #define NativeCalculator_base_func_h
 
+extern double const mk3;
+
 double vectorSumm(double* point, int v1, int v2);
 double calculateVector(double* point, int v1, int v2);
 

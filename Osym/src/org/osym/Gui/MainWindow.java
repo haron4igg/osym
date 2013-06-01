@@ -144,39 +144,14 @@ private String[] displayItems = {  "Вычислительная погрешн�
                 String item = (String) displayComboBox.getSelectedItem();
                 Integer selectedIndex = displayComboBox.getSelectedIndex();
                 System.out.println("Index " + selectedIndex + " Item " + displayComboBox.getItemAt(selectedIndex));
-                switch (selectedIndex) {
-                    case 0:
-                    case 5:
-                    case 6: {
-                        densityComboBox.setEnabled(false);
-                        potentialComboBox.setEnabled(false);
-                        faceComboBox.setEnabled(false);
-                    }
-                    break;
-                    case 1:
-                    case 2:
-                    case 3: {
-                        densityComboBox.setEnabled(false);
-                        potentialComboBox.setEnabled(true);
-                        faceComboBox.setEnabled(false);
-                    }
-                    break;
-                    case 4: {
-                        densityComboBox.setEnabled(false);
-                        potentialComboBox.setEnabled(false);
-                        faceComboBox.setEnabled(true);
-                    }
-                    break;
-                    case 7: {
-                        potentialComboBox.setEnabled(false);
-                        faceComboBox.setEnabled(false);
-                        densityComboBox.setEnabled(true);
-                    }
-                    break;
+
+                try {
+                    ((ImagePanel) drawPanel).setImageToDisplay(engine.getImages().get(selectedIndex));
+                    drawPanel.updateUI();
+                } catch (Exception de) {
+                     //de.printStackTrace();
                 }
 
-                ((ImagePanel) drawPanel).setImageToDisplay(engine.getImages().get(selectedIndex));
-                drawPanel.updateUI();
                 //setupCurrentSettingsToEngine();
             }
         });
@@ -207,6 +182,7 @@ private String[] displayItems = {  "Вычислительная погрешн�
                     break;
                 }
                 engine.setCalculationMode(mode);
+                refreshImagesBox();
                 //setupCurrentSettingsToEngine();
             }
         });
@@ -498,16 +474,35 @@ private String[] displayItems = {  "Вычислительная погрешн�
         frame.setMinimumSize(d);
     }
 
+    private void refreshImagesBox() {
+
+
+        ActionListener[] listeners = displayComboBox.getActionListeners();
+
+        for (ActionListener listener : listeners) {
+            displayComboBox.removeActionListener(listener);
+        }
+
+        displayComboBox.removeAllItems();
+        for (Image2D image : engine.getImages()) {
+            displayComboBox.addItem(image.getMyName());
+        }
+
+        for (ActionListener listener : listeners) {
+            displayComboBox.addActionListener(listener);
+        }
+
+        ((ImagePanel) drawPanel).setImageToDisplay(engine.getImages().get(0));
+    }
+
     private void createUIComponents() {
         engine = new Engine();
         engine.setDelegate(this);
 
         displayComboBox = new JComboBox();
+        drawPanel = new ImagePanel(engine.getImages().get(0));
 
-        for (Integer i : engine.getImages().keySet()) {
-            Image2D image = engine.getImages().get(i);
-            displayComboBox.addItem(image.getMyName());
-        }
+        refreshImagesBox();
 
         potentialComboBox = new JComboBox(potentials);
         potentialComboBox.setEnabled(false);
@@ -517,8 +512,6 @@ private String[] displayItems = {  "Вычислительная погрешн�
 
         densityComboBox = new JComboBox(densities);
         densityComboBox.setEnabled(false);
-
-        drawPanel = new ImagePanel(engine.getImages().get(0));
 
         chMethodComboBox = new JComboBox(chMethods);
 
@@ -657,7 +650,7 @@ private String[] displayItems = {  "Вычислительная погрешн�
         };
 
         System.setOut(new PrintStream(out, true));
-        System.setErr(new PrintStream(out, true));
+        //System.setErr(new PrintStream(out, true));
     }
 
 }

@@ -1,11 +1,7 @@
 package org.osym.Calculation;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Haron
- * Date: 31.03.12
- * Time: 22:05
- * To change this template use File | Settings | File Templates.
+ * Copyright (c) 2013. Igor Reshetnikov. All rights reserved.
  */
 public class Functions {
 

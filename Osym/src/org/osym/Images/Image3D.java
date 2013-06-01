@@ -10,8 +10,12 @@ import java.awt.image.BufferedImage;
  * Time: 21:29
  * To change this template use File | Settings | File Templates.
  */
-public class Image3D extends AbstractImage {
+public class Image3D extends Image2D {
+    public Image3D(String name, int width, int height, int scopeX, int scopeY, PointTransformer transformer, boolean isRequireScope) {
+        super(name, width, height, scopeX, scopeY, transformer, isRequireScope);
+    }
 
+   /*
     protected BufferedImage image = null;
     protected Graphics graphics = null;
 
@@ -28,7 +32,7 @@ public class Image3D extends AbstractImage {
 
     public void paintPixel(int x, int y, int z, int r, int g, int b) {
 
-        /*
+
         int px, py, x1, y1, num1;
 
         px = wndXYAll(x + z * Math.cos(angle), in);
@@ -53,9 +57,10 @@ public class Image3D extends AbstractImage {
                     mas[x1][y1] = num1;
             }
         }
-        */
+
 
         graphics.setColor(new Color(r,g,b));
         graphics.drawOval(x,y,2,2);
     }
+    */
 }

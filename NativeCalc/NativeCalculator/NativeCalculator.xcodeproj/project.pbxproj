@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CADC3B8175A4A760030FFE2 /* octplet_func.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CADC3B7175A4A760030FFE2 /* octplet_func.c */; };
 		1CB07C0B17441D2600A9B8DB /* calculator.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CB07C0A17441D2600A9B8DB /* calculator.c */; };
 		1CB07C0D17441E2100A9B8DB /* calculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CB07C0C17441E2100A9B8DB /* calculator.h */; };
 		1CB07C1517441EC600A9B8DB /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CB07C1417441EC600A9B8DB /* main.c */; };
@@ -40,6 +41,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1CADC3B7175A4A760030FFE2 /* octplet_func.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = octplet_func.c; sourceTree = "<group>"; };
+		1CADC3B9175A4A930030FFE2 /* octplet_func.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = octplet_func.h; sourceTree = "<group>"; };
 		1CB07C0A17441D2600A9B8DB /* calculator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = calculator.c; sourceTree = "<group>"; };
 		1CB07C0C17441E2100A9B8DB /* calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calculator.h; sourceTree = "<group>"; };
 		1CB07C1217441EC600A9B8DB /* osym_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = osym_test; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +83,8 @@
 				1CB07C1E174420A800A9B8DB /* triplet_func.c */,
 				1CB07C21174421B700A9B8DB /* base_func.h */,
 				1CB07C22174421C500A9B8DB /* base_func.c */,
+				1CADC3B9175A4A930030FFE2 /* octplet_func.h */,
+				1CADC3B7175A4A760030FFE2 /* octplet_func.c */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				1CB07C0B17441D2600A9B8DB /* calculator.c in Sources */,
 				1CB07C1F174420A800A9B8DB /* triplet_func.c in Sources */,
 				1CB07C23174421C500A9B8DB /* base_func.c in Sources */,
+				1CADC3B8175A4A760030FFE2 /* octplet_func.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1C20F7A31747D38500EEE58E /* org_osym_Calculation_JNICalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C20F7A11747D38500EEE58E /* org_osym_Calculation_JNICalculator.h */; };
 		1C20F7A41747D38500EEE58E /* org_osym_Calculation_JNICalculator_JNICalculatorListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C20F7A21747D38500EEE58E /* org_osym_Calculation_JNICalculator_JNICalculatorListener.h */; };
+		1C6308D3175A607A00FA92EB /* octplet_func.c in Sources */ = {isa = PBXBuildFile; fileRef = 1C6308D1175A607A00FA92EB /* octplet_func.c */; };
+		1C6308D4175A607A00FA92EB /* octplet_func.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6308D2175A607A00FA92EB /* octplet_func.h */; };
 		1CCF665F174D626A00486FF6 /* base_func.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF6659174D626A00486FF6 /* base_func.c */; };
 		1CCF6660174D626A00486FF6 /* base_func.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CCF665A174D626A00486FF6 /* base_func.h */; };
 		1CCF6661174D626A00486FF6 /* calculator.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF665B174D626A00486FF6 /* calculator.c */; };
@@ -23,6 +25,8 @@
 		1C20F7991747CE6A00EEE58E /* libJNICalculator.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libJNICalculator.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C20F7A11747D38500EEE58E /* org_osym_Calculation_JNICalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = org_osym_Calculation_JNICalculator.h; sourceTree = "<group>"; };
 		1C20F7A21747D38500EEE58E /* org_osym_Calculation_JNICalculator_JNICalculatorListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = org_osym_Calculation_JNICalculator_JNICalculatorListener.h; sourceTree = "<group>"; };
+		1C6308D1175A607A00FA92EB /* octplet_func.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = octplet_func.c; sourceTree = "<group>"; };
+		1C6308D2175A607A00FA92EB /* octplet_func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = octplet_func.h; sourceTree = "<group>"; };
 		1CCF6659174D626A00486FF6 /* base_func.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_func.c; sourceTree = "<group>"; };
 		1CCF665A174D626A00486FF6 /* base_func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_func.h; sourceTree = "<group>"; };
 		1CCF665B174D626A00486FF6 /* calculator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = calculator.c; sourceTree = "<group>"; };
@@ -76,12 +80,14 @@
 		1CCF6658174D626A00486FF6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				1CCF6659174D626A00486FF6 /* base_func.c */,
+				1C6308D2175A607A00FA92EB /* octplet_func.h */,
+				1C6308D1175A607A00FA92EB /* octplet_func.c */,
 				1CCF665A174D626A00486FF6 /* base_func.h */,
-				1CCF665B174D626A00486FF6 /* calculator.c */,
+				1CCF6659174D626A00486FF6 /* base_func.c */,
 				1CCF665C174D626A00486FF6 /* calculator.h */,
-				1CCF665D174D626A00486FF6 /* triplet_func.c */,
+				1CCF665B174D626A00486FF6 /* calculator.c */,
 				1CCF665E174D626A00486FF6 /* triplet_func.h */,
+				1CCF665D174D626A00486FF6 /* triplet_func.c */,
 			);
 			name = Sources;
 			path = ../../NativeCalculator/Sources;
@@ -99,6 +105,7 @@
 				1CCF6660174D626A00486FF6 /* base_func.h in Headers */,
 				1CCF6662174D626A00486FF6 /* calculator.h in Headers */,
 				1CCF6664174D626A00486FF6 /* triplet_func.h in Headers */,
+				1C6308D4175A607A00FA92EB /* octplet_func.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +164,7 @@
 				1CCF665F174D626A00486FF6 /* base_func.c in Sources */,
 				1CCF6661174D626A00486FF6 /* calculator.c in Sources */,
 				1CCF6663174D626A00486FF6 /* triplet_func.c in Sources */,
+				1C6308D3175A607A00FA92EB /* octplet_func.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

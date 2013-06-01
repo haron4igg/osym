@@ -7,14 +7,11 @@ import org.osym.Images.ImageTools;
 
 import java.awt.*;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Haron
- * Date: 31.03.12
- * Time: 18:42
- * To change this template use File | Settings | File Templates.
+ * Copyright (c) 2013. Igor Reshetnikov. All rights reserved.
  */
 
 public class Engine implements ImageManager.ImageManagerDelegate {
@@ -38,6 +35,8 @@ public class Engine implements ImageManager.ImageManagerDelegate {
 
     protected EngineDelegate delegate = null;
 
+    double[][] coefsMatrix = null;
+    double[] coefsMass = null;
     protected double[] startPoint = null;
     protected double[] currentPoint = null;
     protected double[][] scope2D = null;
@@ -53,6 +52,7 @@ public class Engine implements ImageManager.ImageManagerDelegate {
     protected Boolean testMode = true;
 
     protected Boolean scopeProcessed = false;
+    protected Boolean restartNow = false;
     protected Boolean configurationChanged = false;
 
     protected Calculator calculator = null;
@@ -60,7 +60,7 @@ public class Engine implements ImageManager.ImageManagerDelegate {
     protected ImageManager imageManager = null;
     protected Functions functionsManager = null;
 
-    protected HashMap<Integer, Image2D> images = null;
+    protected ArrayList<Image2D> images = null;
 
     public enum CalculationMethod {
         CalculationMethodRKLevel4,
@@ -117,36 +117,30 @@ public class Engine implements ImageManager.ImageManagerDelegate {
         resetConfiguration();
     }
 
-    public void initializeImages() {
-        images = new HashMap<Integer, Image2D>();
-
-        int dim = getDimensions(this.calculationMode);
-
-        images.put(0, new Image2D("Вычислительная погрешность", imagesWidth, imagesHeight, dim+1,dim, new Image2D.PointTransformer() {
-            @Override
-            public Image2D.ImagePoint transform(double[] vector, double[][] scope, double iteration, Functions functions) {
-                int x = ImageTools.wndX(iteration, vector.length + 1, imagesWidth, scope);
-                int y = ImageTools.wndY(functions.EUK(vector), vector.length, imagesHeight, scope);
-                return new Image2D.ImagePoint(x, y, new Color(0));
+    void initializeImages() {
+        ImageFactory factory;
+        switch (calculationMode) {
+            case CalculationModeTriplet:
+            case CalculationModeTripletNativeJNI:
+            case CalculationModeTripletNative:  {
+                factory = new TripletImagesFactory();
+                break;
             }
-        }));
-
-        images.put(0, new Image2D("Вычислительная погрешность", imagesWidth, imagesHeight, dim+1,dim, new Image2D.PointTransformer() {
-            @Override
-            public Image2D.ImagePoint transform(double[] vector, double[][] scope, double iteration, Functions functions) {
-                int x = ImageTools.wndX(iteration, vector.length + 1, imagesWidth, scope);
-                int y = ImageTools.wndY(functions.EUK(vector), vector.length, imagesHeight, scope);
-                return new Image2D.ImagePoint(x, y, new Color(0));
+            default: {
+                factory = new OctupletImagesFactory();
+                break;
             }
-        }));
+        }
 
+        images = factory.initializeImages(imagesWidth, imagesHeight, getDimensions(calculationMode));
     }
 
     void resetConfiguration() {
-        initializeImages();
+
         if (imageManager != null) {
             imageManager.stop();
         }
+        initializeImages();
         scopeProcessed = false;
         currentPoint = null;
         calculator = null;
@@ -154,11 +148,12 @@ public class Engine implements ImageManager.ImageManagerDelegate {
         scope2D = null;
         scope2DMax = null;
         startPoint = null;
+        System.gc();
     }
 
 
     public void clearImages() {
-        for (Image2D image : this.getImages().values()) {
+        for (Image2D image : this.getImages()) {
             image.clearImage();
         }
     }
@@ -176,8 +171,7 @@ public class Engine implements ImageManager.ImageManagerDelegate {
 
             this.functionsManager = (calculationMode == CalculationMode.CalculationModeOctplet) ? new OctpletFunctions() : new TripletFunctions();
 
-            double[][] coefsMatrix = null;
-            double[] coefsMass = new double[dimension];
+            coefsMass = new double[dimension];
 
             switch (calculationMethod) {
                 case CalculationMethodRKLevel4: {
@@ -241,9 +235,15 @@ public class Engine implements ImageManager.ImageManagerDelegate {
             }
 
 
+            restartNow = false;
+            scopeProcessed = false;
+
+            ImageFactory factory = null;
 
             this.imageManager = new ImageManager(imagesWidth, imagesHeight, scope2D, scope2DMax, this.functionsManager);
-            this.imageManager.setImages2D(this.getImages());
+
+            initializeImages();
+            this.imageManager.setImages2D(getImages());
             this.imageManager.setDelegate(this);
 
             progressHandler = new ProgressHandler();
@@ -279,6 +279,7 @@ public class Engine implements ImageManager.ImageManagerDelegate {
 
                 coefsMass = new double[] {0.04880952380952381, 0.0, 0.0, 0.0, 0.0, 0.3238095238095238, 0.2571428571428571, 0.2571428571428571, 0.03214285714285714, 0.03214285714285714, 0.0, 0.0, 0.04880952380952381, 0.0, 0.0, 0.0, 0.0, 0.0};
                 currentPoint = new double[]  {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.5446230076646713, 0.257800690054833, 0.25436137854197866, 0.2461605091991794, -0.3193534630602443, 0.628712774525114, 0.5874934622379206, -0.5699922058548407, 0.5867911096969345};
+                startPoint = currentPoint.clone();
             }
 
             calculator.runAsync(coefsMatrix, coefsMass, currentPoint, startIteration, iterationLimit, calculationStep, progressHandler);
@@ -295,9 +296,19 @@ public class Engine implements ImageManager.ImageManagerDelegate {
             if (iteration < iterationLimit) {
                 delegate.drawingProgressDidChange((int)(iteration/iterationLimit * 100));
             } else {
-                delegate.drawingProgressDidChange(100);
-                delegate.calculationDone();
                 System.out.println("Total time: " +(System.currentTimeMillis() - totalExecutionTime) + " Produced points: " + totalPointsProduced);
+                if (restartNow && scopeProcessed) {
+                    restartNow = false;
+                    System.out.println("Scope matrix complete, Restarting.");
+                    currentPoint = startPoint.clone();
+                    delegate.drawingProgressDidChange(0);
+                    delegate.calculationProgressDidChange(0);
+                    imageManager.setScopeComplete(true);
+                    calculator.runAsync(coefsMatrix, coefsMass, currentPoint, startIteration, iterationLimit, calculationStep, progressHandler);
+                } else if (!restartNow && scopeProcessed) {
+                    delegate.drawingProgressDidChange(100);
+                    delegate.calculationDone();
+                }
             }
         }
     }
@@ -383,6 +394,7 @@ public class Engine implements ImageManager.ImageManagerDelegate {
                     scope2DMax[s + dim2][1] = scope2DMax[s + dim2][1] + Math.abs(scope2DMax[s + dim2][1] - scope2DMax[s + dim2][0]) * 0.2;
                 }
                 scopeProcessed = true;
+                restartNow = true;
             }
             delegate.calculationProgressDidChange(100);
             imageManager.paintImagesAsync(iteration, point);
@@ -438,8 +450,12 @@ public class Engine implements ImageManager.ImageManagerDelegate {
     public void setCalculationMode(CalculationMode calculationMode) {
         if (this.calculationMode != calculationMode) {
             configurationChanged = true;
+
         }
         this.calculationMode = calculationMode;
+        if (configurationChanged) {
+            initializeImages();
+        }
     }
 
     public void setStartingConditions(StartingConditions startingConditions) {
@@ -555,7 +571,7 @@ public class Engine implements ImageManager.ImageManagerDelegate {
         this.delegate = delegate;
     }
 
-    public HashMap<Integer, Image2D> getImages() {
+    public ArrayList<Image2D> getImages() {
         return images;
     }
 
